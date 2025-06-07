@@ -50,12 +50,12 @@ public class CameraHandler : MonoBehaviour
     // Rotate with vehicle (optional for top-down)
     if (rotateWithTarget)
     {
-        Quaternion desiredRotation = Quaternion.Euler(360f, target.eulerAngles.y, 0f);
+        Quaternion desiredRotation = Quaternion.Euler(0f, target.eulerAngles.y, 90f);
         transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, rotationDamping * Time.deltaTime);
     }
     else
     {
-        transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
     }
     }
 
