@@ -284,7 +284,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 79.07
+  orthographic size: 106.62
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
-  MaxSpeed: 10000
+  MaxSpeed: 100000
   CurrentGear: 0
   ShiftUpBoost: 0.1
   UseAutoShift: 0
@@ -482,18 +482,18 @@ MonoBehaviour:
   AutoShiftUpThreshold: 0.95
   AutoShiftDownThreshold: 0.05
   Tachometer: 0
-  Gear1Speed: 3000
-  Gear2Speed: 6000
-  Gear3Speed: 10000
+  Gear1Speed: 6000
+  Gear2Speed: 10000
+  Gear3Speed: 20000
   GearRSpeed: 40
-  Gear1Time: 2
-  Gear2Time: 4
-  Gear3Time: 6
+  Gear1Time: 4
+  Gear2Time: 8
+  Gear3Time: 16
   GearRTime: 2
-  BrakeMaxTime: 2
+  BrakeMaxTime: 1
   BrakeDecel: 0
-  BrakeMaxDecel: 80
-  HandbrakeDecel: 150
+  BrakeMaxDecel: 6000
+  HandbrakeDecel: 10000
   NaturalDecel: 0.1
   SteeringSensitivity: 25
   SteerSpeed: 2
@@ -515,8 +515,8 @@ Transform:
   - {fileID: 519420032}
   m_Father: {fileID: 1762639227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &775778073
-BoxCollider2D:
+--- !u!70 &775778073
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -549,18 +549,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.35, y: 1.03}
-    newSize: {x: 0.32, y: 1.29}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.32, y: 1.29}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.000000059604645, y: 0}
+  m_Size: {x: 0.3, y: 1.03}
+  m_Direction: 0
 --- !u!1 &1455055870
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762639227}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Vehicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
