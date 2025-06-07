@@ -223,7 +223,7 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 46.2
+  spawnChancePercent: 15
 --- !u!1 &2666268134707411428
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 0.2
+  spawnChancePercent: 15
 --- !u!1 &7750350180820272537
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 0.2
+  spawnChancePercent: 15
 --- !u!1 &7924278473009357242
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 0.2
+  spawnChancePercent: 15
 --- !u!1 &8219862048115485256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 0.2
+  spawnChancePercent: 15
 --- !u!1 &8827108140683290540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,4 +1085,4 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
-  spawnChancePercent: 0.2
+  spawnChancePercent: 15
