@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 /// <summary>
 /// Controls the movement, braking, steering, and gear shifting of a 2D vehicle. <br/>
 /// Attach this to a vehicle GameObject with a Rigidbody2D.
@@ -11,6 +11,20 @@
 /// 4. (Optional) Tune the parameters to your liking in the Unity Inspector. <br/>
 /// </summary>
 public class VehicleMovement : MonoBehaviour {
+
+
+	[SerializeField]private SoundData idleSound;
+	[SerializeField]private SoundData[] gearSounds = new SoundData[3];
+	[SerializeField] private SoundData brakeSound;
+	[SerializeField] private SoundData crashSound;
+	[SerializeField]private AudioSource engineSource;
+
+	[SerializeField] private SoundData gearShiftSound;
+	
+	[SerializeField] private AudioSource sfxSource;
+	private int previousGear;
+
+	public CameraHandler camHandler;
 
 	#region Forward Movement
 
@@ -51,6 +65,20 @@ public class VehicleMovement : MonoBehaviour {
 		else if (CurrentGear == -1) speedIncrement = -GearRSpeed * accelerationTime / GearRTime;
 
 		Speed += speedIncrement;
+
+
+		if (CurrentGear < previousGear)
+		{
+			PlayOneShotSound(gearShiftSound, 0.9f); // Downshift
+			pitchOverrideValue = 0.8f;
+			pitchOverrideTimer = 0.3f;
+		}
+		else if (CurrentGear > previousGear)
+		{
+			PlayOneShotSound(gearShiftSound, 1.1f); // Upshift
+		}
+
+	previousGear = CurrentGear;
 
 		//Clamp the speed based on current gear
 		if (CurrentGear == 1) Speed = Mathf.Clamp(Speed, 0, Gear1Speed);
@@ -409,6 +437,54 @@ public class VehicleMovement : MonoBehaviour {
 
 	}
 
+	private float lastSpeed;
+	private float brakeCooldown = 0f;
+
+
+	private void UpdateBrakingSound()
+	{
+		float speedDelta = lastSpeed - Speed;
+
+		bool isBraking = speedDelta > 2f; // You can tune this threshold
+
+		if (isBraking && brakeCooldown <= 0f)
+		{
+			PlayOneShotSound(brakeSound);
+			brakeCooldown = 0.5f; // Prevent spam
+		}
+
+		brakeCooldown -= Time.deltaTime;
+		lastSpeed = Speed;
+	}
+
+	private void PlayOneShotSound(SoundData soundData, float pitch = 1f)
+{
+    if (soundData != null && sfxSource != null)
+    {
+        sfxSource.pitch = pitch;
+        sfxSource.PlayOneShot(soundData.clip);
+        sfxSource.pitch = 1f; // Reset to default after
+    }
+}
+
+
+	private void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.relativeVelocity.magnitude > 3f)
+    {
+        if (camHandler != null)
+        {
+            camHandler.TriggerShake();
+        }
+        else
+        {
+            Debug.LogWarning("CameraHandler is missing.");
+        }
+
+        PlayOneShotSound(crashSound); // <- Use your SoundData method
+    }
+}
+
 	#endregion
 
 	#region Game Objects & Components
@@ -422,20 +498,88 @@ public class VehicleMovement : MonoBehaviour {
 
 	#region Unity Callbacks
 
-	private void Update() {
+	private void PlaySoundData(SoundData data)
+{
+    engineSource.clip = data.clip;
+    engineSource.volume = data.volume;
+    engineSource.pitch = data.pitch;
+    engineSource.loop = true;
+    engineSource.Play();
+}
+
+
+private float pitchOverrideTimer = 0f;
+private float pitchOverrideValue = 1f;
+
+	private void UpdateEngineSound()
+{
+	if (Speed < 0.5f) // Idle state
+	{
+		if (engineSource.clip != idleSound.clip)
+		{
+			PlaySoundData(idleSound);
+		}
+		engineSource.pitch = idleSound.pitch;
+	}
+	else
+	{
+		if (CurrentGear >= 1 && CurrentGear <= gearSounds.Length)
+		{
+			SoundData gearSound = gearSounds[CurrentGear - 1];
+
+			if (engineSource.clip != gearSound.clip)
+			{
+				PlaySoundData(gearSound);
+			}
+		}
+
+		// Apply pitch override if active
+		if (pitchOverrideTimer > 0f)
+		{
+			engineSource.pitch = pitchOverrideValue;
+			pitchOverrideTimer -= Time.deltaTime;
+		}
+		else
+		{
+			engineSource.pitch = Mathf.Lerp(1f, 2f, Mathf.Clamp01(Tachometer));
+		}
+	}
+}
+
+
+
+	private IEnumerator TemporarilyLowerEnginePitch()
+	{
+		engineSource.pitch = 0.8f;
+		yield return new WaitForSeconds(0.3f);
+		engineSource.pitch = Mathf.Lerp(1f, 2f, Tachometer); // Restore normal pitch
+	}
+
+
+	private void Start()
+	{
+		previousGear = CurrentGear;
+		lastSpeed = Speed;
+
+	}
+	
+		private void Update()
+	{
 
 		#region Inputs
 
 		if (Input.IsDecelerating) FootBrake();
 		else if (Input.IsHandBraking) HandBrake();
 		else if (Input.IsAccelerating) Accelerate();
-		else {
+		else
+		{
 			NaturallyDecelerate();
 			BrakeTime = 0;
 
 		}
 
-		if (!Input.IsDecelerating && Mathf.Abs(Speed) < 0.1f) {
+		if (!Input.IsDecelerating && Mathf.Abs(Speed) < 0.1f)
+		{
 			BrakeTime = 0;
 			BrakeDecel = 0;
 		}
@@ -451,13 +595,28 @@ public class VehicleMovement : MonoBehaviour {
 		if (Input.SelectGear3) ChangeGear(3, true);
 		if (Input.SelectGearR) ChangeGear(-1, true);
 
+
+
+		if (CurrentGear != previousGear)
+		{
+			bool isDownshift = CurrentGear < previousGear;
+
+			PlayOneShotSound(gearShiftSound, isDownshift ? 0.9f : 1.1f);
+			previousGear = CurrentGear;
+
+			if (isDownshift)
+			{
+				StartCoroutine(TemporarilyLowerEnginePitch());
+			}
+		}
 		#endregion
 
-		Speed = Mathf.Clamp(Speed, -MaxSpeed, MaxSpeed);
 
 		AutoShift(UseAutoShift);
 
 		UpdateTachometer();
+		UpdateBrakingSound();
+		UpdateEngineSound();
 	}
 
 	private void FixedUpdate() {

@@ -73,16 +73,16 @@ public class CarController2D : MonoBehaviour
         switch (currentGear)
         {
             case 0:
-                CrossfadeIfNeeded("accel1", gear1);
+                CrossfadeIfNeeded("gear1", gear1);
                 break;
             case 1:
-                CrossfadeIfNeeded("accel1", gear1);
+                CrossfadeIfNeeded("gear1", gear1);
                 break;
             case 2:
-                CrossfadeIfNeeded("accel2", gear2);
+                CrossfadeIfNeeded("gear2", gear2);
                 break;
             default:
-                CrossfadeIfNeeded("accel2", gear2); // fallback to highest accel sound
+                CrossfadeIfNeeded("gear2", gear2); // fallback to highest accel sound
                 break;
         }
     }
@@ -100,7 +100,7 @@ public class CarController2D : MonoBehaviour
     {
         float moveInput = Input.GetAxis("Vertical");   // W/S or Up/Down
         float turnInput = Input.GetAxis("Horizontal"); // A/D or Left/Right
-            Debug.Log("Move Input: " + moveInput + ", Turn Input: " + turnInput);
+            //Debug.Log("Move Input: " + moveInput + ", Turn Input: " + turnInput);
         // Limit speed
         if (rb.linearVelocity.magnitude < maxSpeed)
         {
