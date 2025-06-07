@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-<<<<<<< Updated upstream
 
 public class Passenger : MonoBehaviour
 {
@@ -79,7 +78,6 @@ public class Passenger : MonoBehaviour
 
 		#endregion
 	}
-=======
 using System;
 using Random = System.Random;
 
@@ -147,6 +145,4 @@ public class Passenger : MonoBehaviour
 			}
 		}
 	}
-
->>>>>>> Stashed changes
 }
