@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+<<<<<<< Updated upstream
 
 public class Passenger : MonoBehaviour
 {
@@ -78,4 +79,74 @@ public class Passenger : MonoBehaviour
 
 		#endregion
 	}
+=======
+using System;
+using Random = System.Random;
+
+public class Passenger : MonoBehaviour
+{
+	public int FareOwed = 0;
+
+	public static int MinimumFare = 11;
+
+	public static int MaximumFare = 30;
+
+	public int FarePaid = 0;
+
+	public int[] FairPaidInCash;
+
+	public static int MinimumPay = 1;
+
+	public static int MaximumPay = 1000;
+
+	public int FareChange = 0;
+
+	private void Start() {
+		
+	}
+
+	/// <summary>
+	/// Calculates a biased random value between min and max, biased towards the average.
+	/// </summary>
+	/// <param name="min">The minimum value to return.</param>
+	/// <param name="max"></param>
+	/// <param name="average"></param>
+	/// <returns></returns>
+	public static double BiasedRandom( double min, double max, double average) {
+		Random random = new();
+
+		double range = max - min;
+		double midpoint = (min + max) / 2;
+
+		//Determine bias direction
+		bool biasRight = average > midpoint;
+
+		//Bias strength: closer to min or max means stronger skew
+		double distance = Math.Abs(average - midpoint) / (range / 2);
+		double exponent = biasRight ? (1.0 - distance) * 2 + 1 : (1.0 + distance) * 2 + 1;
+
+		//Generate biased number
+		double random01 = random.NextDouble();
+		double skewed = biasRight ? Math.Pow(random01, 1.0 / exponent) : 1 - Math.Pow(1 - random01, 1.0 / exponent);
+
+		return min + skewed * range;
+	}
+
+	public static int[] Denominations = new int[] { 1, 5, 10, 20, 50, 100, 200, 500, 1000 };
+
+	public static int RoundToBill(int value) {
+		//Round to the nearest bill denomination
+		if (value < 50) {
+			return value;
+		}
+
+		//For values 50 and above, round to the nearest denomination
+		for (int i = Denominations.Length - 1; i >= 0; i--) {
+			if (value >= Denominations[i]) {
+				return Denominations[i];
+			}
+		}
+	}
+
+>>>>>>> Stashed changes
 }
