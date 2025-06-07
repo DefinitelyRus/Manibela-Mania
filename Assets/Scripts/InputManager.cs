@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-//Controls for a 2D Top-down Driving Sim
 public class InputManager : MonoBehaviour
 {
 	[Header("Movement Controls")]
@@ -9,8 +8,8 @@ public class InputManager : MonoBehaviour
 	public KeyCode MoveLeft = KeyCode.A;
 	public KeyCode MoveRight = KeyCode.D;
 	public KeyCode Handbrake = KeyCode.Space;
-	public KeyCode GearUp = KeyCode.UpArrow;
-	public KeyCode GearDown = KeyCode.DownArrow;
+	public KeyCode GearUp = KeyCode.Q;
+	public KeyCode GearDown = KeyCode.E;
 	public KeyCode Gear1 = KeyCode.Alpha1;
 	public KeyCode Gear2 = KeyCode.Alpha2;
 	public KeyCode Gear3 = KeyCode.Alpha3;
@@ -33,6 +32,13 @@ public class InputManager : MonoBehaviour
 
 	public bool PressedAccept { get; private set; } = false;
 	public bool PressedCancel { get; private set; } = false;
+
+	[Header("Mouse Controls")]
+	public KeyCode MouseLeft = KeyCode.Mouse0;
+	public KeyCode MouseRight = KeyCode.Mouse1;
+
+	public bool ClickedLeft { get; private set; } = false;
+	public bool ClickedRight { get; private set; } = false;
 
 	public void InputListener() {
 
@@ -65,6 +71,13 @@ public class InputManager : MonoBehaviour
 
 		PressedAccept = Input.GetKeyDown(MenuAccept);
 		PressedCancel = Input.GetKeyDown(MenuCancel);
+
+		#endregion
+
+		#region Mouse Controls
+
+		ClickedLeft = Input.GetKeyDown(MouseLeft);
+		ClickedRight = Input.GetKeyDown(MouseRight);
 
 		#endregion
 	}
