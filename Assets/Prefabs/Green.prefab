@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &482685659537067875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5337778232241568123}
+  - component: {fileID: 7958137743755619431}
+  m_Layer: 0
+  m_Name: PassengerSpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5337778232241568123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482685659537067875}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4907913, y: 0.12181091, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7958137743755619431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482685659537067875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
 --- !u!1 &1395912337556370022
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,8 +79,96 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1690771559335316426}
   - {fileID: 6601353093242150376}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1775185737605084428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4972926853782056017}
+  - component: {fileID: 4058247334759508576}
+  m_Layer: 0
+  m_Name: PassengerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4972926853782056017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775185737605084428}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4907913, y: -2.1081886, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4058247334759508576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775185737605084428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
+--- !u!1 &2777044991365013589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690771559335316426}
+  m_Layer: 0
+  m_Name: PassengerSpawnerFolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1690771559335316426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777044991365013589}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.76921, y: -22.631811, z: -4.1669445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4972926853782056017}
+  - {fileID: 2589691861820577331}
+  - {fileID: 3919400530427641905}
+  - {fileID: 5337778232241568123}
+  - {fileID: 8821675304045917261}
+  - {fileID: 7663827974945457901}
+  m_Father: {fileID: 5257879637505517108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2938458821169997062
 GameObject:
@@ -77,6 +215,56 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &3042412514169418229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3919400530427641905}
+  - component: {fileID: 5789945801049644064}
+  m_Layer: 0
+  m_Name: PassengerSpawner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3919400530427641905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042412514169418229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6592102, y: 0.12181091, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5789945801049644064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042412514169418229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
 --- !u!1 &3474540621817571131
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +688,106 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &5858161952739835294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2589691861820577331}
+  - component: {fileID: 4471210828188617757}
+  m_Layer: 0
+  m_Name: PassengerSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2589691861820577331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858161952739835294}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6592102, y: -2.1081886, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4471210828188617757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858161952739835294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
+--- !u!1 &7119345639821177707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7663827974945457901}
+  - component: {fileID: 5144127151937282255}
+  m_Layer: 0
+  m_Name: PassengerSpawner (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7663827974945457901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119345639821177707}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.689209, y: 1.7818108, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5144127151937282255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119345639821177707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
 --- !u!1 &8468481399669154117
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +866,56 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 27.905365, y: 159.81715}
   m_EdgeRadius: 0
+--- !u!1 &8945208334229005448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8821675304045917261}
+  - component: {fileID: 5162105969545245023}
+  m_Layer: 0
+  m_Name: PassengerSpawner (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8821675304045917261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945208334229005448}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4907913, y: 1.7818108, z: 4.4273653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690771559335316426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5162105969545245023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945208334229005448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b3d46df463c442a5e0541b8f4f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefabs:
+  - {fileID: 1295488924508482443, guid: e8e07cca24854414195b9b8d56378369, type: 3}
+  - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  spawnChancePercent: 15
 --- !u!1 &9218829876437520297
 GameObject:
   m_ObjectHideFlags: 0

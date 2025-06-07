@@ -215,7 +215,7 @@ MonoBehaviour:
   player: {fileID: 775778072}
   spawnDistanceAhead: 50
   despawnDistance: 50
-  worldHeight: 10
+  worldHeight: 5
 --- !u!4 &401908377
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 1.7
+  orthographic size: 2.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -309,11 +309,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.86, y: -0.44, z: -13.219466}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.2600021, y: 0.62015045, z: -0.2654923}
+  m_LocalScale: {x: 1, y: 1, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1762639227}
+  m_Father: {fileID: 775778072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 775778073}
   m_Layer: 0
   m_Name: Jeep
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,13 +482,13 @@ MonoBehaviour:
   AutoShiftUpThreshold: 0.95
   AutoShiftDownThreshold: 0.05
   Tachometer: 0
-  Gear1Speed: 3000
-  Gear2Speed: 6000
-  Gear3Speed: 10000
+  Gear1Speed: 100
+  Gear2Speed: 200
+  Gear3Speed: 300
   GearRSpeed: 40
-  Gear1Time: 2
-  Gear2Time: 4
-  Gear3Time: 6
+  Gear1Time: 1
+  Gear2Time: 2
+  Gear3Time: 3
   GearRTime: 2
   BrakeMaxTime: 2
   BrakeDecel: 0
@@ -511,7 +511,8 @@ Transform:
   m_LocalPosition: {x: 66.6, y: -1.060151, z: 0.055148125}
   m_LocalScale: {x: 1, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 519420032}
   m_Father: {fileID: 1762639227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &775778073
@@ -739,7 +740,7 @@ GameObject:
   - component: {fileID: 1762639227}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,12 +754,11 @@ Transform:
   m_GameObject: {fileID: 1762639226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: -23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 775778072}
-  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
