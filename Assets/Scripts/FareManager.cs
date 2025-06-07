@@ -30,12 +30,12 @@ public class FareManager : MonoBehaviour {
 	/// <summary>
 	/// The next passenger that is queued for payment.
 	/// </summary>
-	public Queue<Passenger> PassengerQueue { get; private set; } = new();
+	public Queue<BoardedPassenger> PassengerQueue { get; private set; } = new();
 
 	/// <summary>
 	/// The current passenger that is being processed for payment.
 	/// </summary>
-	public Passenger CurrentPassenger { get; private set; }
+	public BoardedPassenger CurrentPassenger { get; private set; }
 
 	#endregion
 
@@ -46,7 +46,7 @@ public class FareManager : MonoBehaviour {
 	/// <br/><br/>
 	/// This function is called when the passenger wants to pay their fare.
 	/// </summary>
-	public void QueuePayment(Passenger passenger) {
+	public void QueuePayment(BoardedPassenger passenger) {
 		if (passenger == null) {
 			Debug.LogError("[FareManager] Cannot queue payment for a null passenger.");
 			return;
@@ -67,20 +67,20 @@ public class FareManager : MonoBehaviour {
 
 		//Remove from queue, add to balance
 		CurrentPassenger = PassengerQueue.Dequeue();
-		Balance += CurrentPassenger.FarePaid;
+		Balance += CurrentPassenger.FareToPay;
 		if (debug) Debug.Log($"[FareManager] Accepted payment from new CurrentPassenger.");
 
 		//Mark as fully paid if no change
-		if (CurrentPassenger.FareOwed == CurrentPassenger.FarePaid) {
+		if (CurrentPassenger.FareOwed == CurrentPassenger.FareToPay) {
 			CurrentPassenger.FullyPaid = true;
-			if (debug) Debug.Log($"[FareManager] Passenger has fully paid their fare: P{CurrentPassenger.FarePaid}.");
+			if (debug) Debug.Log($"[FareManager] Passenger has fully paid their fare: P{CurrentPassenger.FareToPay}.");
 
 			CurrentPassenger = null;
 		}
 
 		//Calculate the expected change
 		else {
-			CurrentPassenger.ExpectedChange = CurrentPassenger.FarePaid - CurrentPassenger.FareOwed;
+			CurrentPassenger.ExpectedChange = CurrentPassenger.FareToPay - CurrentPassenger.FareOwed;
 			if (debug) Debug.Log($"[FareManager] Passenger has not fully paid their fare. Expected change: P{CurrentPassenger.ExpectedChange}.");
 		}
 	}
