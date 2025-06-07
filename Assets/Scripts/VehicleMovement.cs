@@ -13,8 +13,6 @@ using System.Collections;
 /// </summary>
 public class VehicleMovement : MonoBehaviour {
 
-	public VehicleSFX AudioHandler;
-
 	#region Forward Movement
 
 	#region Speed & Acceleration
@@ -488,10 +486,12 @@ public class VehicleMovement : MonoBehaviour {
 
 	public Rigidbody2D Body;
 
+	public VehicleSFX AudioHandler;
+
 	#endregion
 
 	#region Unity Callbacks
-	
+
 	private void Update() {
 
 		#region Inputs
