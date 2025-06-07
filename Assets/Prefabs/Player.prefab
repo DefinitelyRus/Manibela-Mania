@@ -47,6 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe9e1ecdd794d5468a45a6343f74abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleSound: {fileID: 0}
+  gearSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  brakeSound: {fileID: 0}
+  crashSound: {fileID: 0}
+  engineSource: {fileID: 0}
+  gearShiftSound: {fileID: 0}
+  sfxSource: {fileID: 0}
+  camHandler: {fileID: 0}
   Speed: 0
   MaxSpeed: 1000
   CurrentGear: 0
@@ -181,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2b62d2011a200654aa33500086889913, type: 3}
+  m_Sprite: {fileID: -6225114655116531735, guid: 921c59472e82b0848a7f1ea44e97394e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -18,7 +18,7 @@ public class CashStash : MonoBehaviour
 	private void ScanMouseClick(bool debug = false) {
 
 		//Clear staged coins and give change
-		if (InputManager.ClickedLeft) {
+		if (InputManager.OnMouse1) {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 			if (Collider.OverlapPoint(mousePosition)) {
@@ -29,7 +29,7 @@ public class CashStash : MonoBehaviour
 		}
 
 		//Clear staged coins
-		else if (InputManager.ClickedRight) {
+		else if (InputManager.OnMouse2) {
 			if (Collider.OverlapPoint(Input.mousePosition)) {
 				FareManager.UnstageChange(CashValue);
 

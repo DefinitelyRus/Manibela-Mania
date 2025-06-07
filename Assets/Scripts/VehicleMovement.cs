@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+
 /// <summary>
 /// Controls the movement, braking, steering, and gear shifting of a 2D vehicle. <br/>
 /// Attach this to a vehicle GameObject with a Rigidbody2D.
@@ -12,19 +13,7 @@ using System.Collections;
 /// </summary>
 public class VehicleMovement : MonoBehaviour {
 
-
-	[SerializeField]private SoundData idleSound;
-	[SerializeField]private SoundData[] gearSounds = new SoundData[3];
-	[SerializeField] private SoundData brakeSound;
-	[SerializeField] private SoundData crashSound;
-	[SerializeField]private AudioSource engineSource;
-
-	[SerializeField] private SoundData gearShiftSound;
-	
-	[SerializeField] private AudioSource sfxSource;
-	private int previousGear;
-
-	public CameraHandler camHandler;
+	public VehicleSFX AudioHandler;
 
 	#region Forward Movement
 
@@ -37,7 +26,8 @@ public class VehicleMovement : MonoBehaviour {
 	public float Speed = 0f;
 
 	/// <summary>
-	/// The absolute maximum speed the vehicle can move in regardless of direction or gear.
+	/// The absolute maximum speed the vehicle can
+	/// move in regardless of direction or gear.
 	/// </summary>
 	public float MaxSpeed = 200f;
 
@@ -66,25 +56,26 @@ public class VehicleMovement : MonoBehaviour {
 
 		Speed += speedIncrement;
 
-
-		if (CurrentGear < previousGear)
-		{
-			PlayOneShotSound(gearShiftSound, 0.9f); // Downshift
-			pitchOverrideValue = 0.8f;
-			pitchOverrideTimer = 0.3f;
-		}
-		else if (CurrentGear > previousGear)
-		{
-			PlayOneShotSound(gearShiftSound, 1.1f); // Upshift
-		}
-
-	previousGear = CurrentGear;
-
 		//Clamp the speed based on current gear
-		if (CurrentGear == 1) Speed = Mathf.Clamp(Speed, 0, Gear1Speed);
-		else if (CurrentGear == 2) Speed = Mathf.Clamp(Speed, 0, Gear2Speed);
-		else if (CurrentGear == 3) Speed = Mathf.Clamp(Speed, 0, Gear3Speed);
-		else if (CurrentGear == -1) Speed = Mathf.Clamp(Speed, -GearRSpeed, 0);
+		if (CurrentGear == 1) {
+			Speed = Mathf.Clamp(Speed, 0, Gear1Speed);
+			AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Gear1);
+		}
+		else if (CurrentGear == 2) {
+			Speed = Mathf.Clamp(Speed, 0, Gear2Speed);
+			AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Gear2);
+		}
+		else if (CurrentGear == 3) {
+			Speed = Mathf.Clamp(Speed, 0, Gear3Speed);
+			AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Gear3);
+		}
+		else if (CurrentGear == -1) {
+			Speed = Mathf.Clamp(Speed, -GearRSpeed, 0);
+			AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Idle);
+		}
+		else if (CurrentGear == 0) {
+			AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Idle);
+		}
 	}
 
 	#endregion
@@ -100,9 +91,11 @@ public class VehicleMovement : MonoBehaviour {
 	/// <summary>
 	/// The amount of speed to boost when shifting up a gear.
 	/// <br/><br/>
-	/// This is mostly used to prevent the player from immediately auto-shifting down or stalling
-	/// when shifting up a gear, as it gives the player a slight speed boost.<br/>
-	/// It also helps make the initial push when shifting up a gear feel more powerful.
+	/// This is mostly used to prevent the player from immediately
+	/// auto-shifting down or stalling when shifting up a gear,
+	/// as it gives the player a slight speed boost.<br/>
+	/// It also helps make the initial push when shifting
+	/// up a gear feel more powerful.
 	/// </summary>
 	public float ShiftUpBoost = 0.1f;
 
@@ -112,7 +105,8 @@ public class VehicleMovement : MonoBehaviour {
 	public bool UseAutoShift = false;
 
 	/// <summary>
-	/// The speed percentage at which the tachometer will shift up gears when the player manually shifts up.
+	/// The speed percentage at which the tachometer will
+	/// shift up gears when the player manually shifts up.
 	/// </summary>
 	public float ManualShiftUpThreshold = 0.5f;
 
@@ -155,6 +149,11 @@ public class VehicleMovement : MonoBehaviour {
 			return;
 		}
 
+		if (CurrentGear == shiftTo) {
+			if (debug) Debug.Log($"[PlayerMovement] Already in gear {CurrentGear}.");
+			return;
+		}
+
 		if (shiftTo == 1 && (Speed > Gear1Speed || Speed < 0)) {
 			if (debug) Debug.Log($"[PlayerMovement] Cannot shift to 1st gear while speed is above {Gear1Speed:F0}.");
 			return;
@@ -175,13 +174,30 @@ public class VehicleMovement : MonoBehaviour {
 			return;
 		}
 
+		//Add boost
+		switch (shiftTo) {
+			case 0:
+				AudioHandler.SetLooping(VehicleSFX.LoopingSFX.Idle);
+				break;
+			case 1:
+				Speed *= 1 + ShiftUpBoost;
+				Mathf.Clamp(Speed, 0, Gear1Speed);
+				if (Speed > MaxSpeed) Speed = MaxSpeed;
+				break;
+			case 2:
+				Speed *= 1 + ShiftUpBoost;
+				if (Speed > MaxSpeed) Speed = MaxSpeed;
+				break;
+			case 3:
+				Speed *= 1 + ShiftUpBoost;
+				if (Speed > MaxSpeed) Speed = MaxSpeed;
+				break;
+		}
+
 		CurrentGear = shiftTo;
 
-		//Apply speed boost on gear change.
-		if (shiftTo == 1) {
-			Speed *= 1 + ShiftUpBoost;
-			if (Speed > MaxSpeed) Speed = MaxSpeed;
-		}
+		//Play audio
+		AudioHandler.Play(VehicleSFX.OneShotSFX.GearShift);
 
 		if (debug) Debug.Log($"[PlayerMovement] Changed gear to {CurrentGear}.");
 	}
@@ -283,15 +299,15 @@ public class VehicleMovement : MonoBehaviour {
 	#region Braking
 
 	/// <summary>
-	/// How many seconds the vehicle has been braking.
-	/// </summary>
-	private float BrakeTime = 0f;
-
-	/// <summary>
 	/// How many seconds it takes for <see cref="BrakeDecel"/> to reach <see cref="BrakeMaxDecel"/>.
 	/// </summary>
 	[Header("Braking & Deceleration")]
 	public float BrakeMaxTime = 2f;
+
+	/// <summary>
+	/// How many seconds the vehicle has been braking.
+	/// </summary>
+	private float BrakeTime = 0f;
 
 	/// <summary>
 	/// How much to reduce <see cref="Speed"/> by every second when braking.
@@ -437,53 +453,31 @@ public class VehicleMovement : MonoBehaviour {
 
 	}
 
-	private float lastSpeed;
-	private float brakeCooldown = 0f;
+	#endregion
 
+	#region 
 
-	private void UpdateBrakingSound()
-	{
-		float speedDelta = lastSpeed - Speed;
+	/// <summary>
+	/// Handles camera shake and collision effects when the vehicle collides with something.
+	/// </summary>
+	[Header("Camera Shake & Collision")]
+	public CameraHandler Camera;
 
-		bool isBraking = speedDelta > 2f; // You can tune this threshold
+	/// <summary>
+	/// The magnitude of the camera shake when a collision occurs.
+	/// </summary>
+	public float CollisionShakeMagnitude = 3f;
 
-		if (isBraking && brakeCooldown <= 0f)
-		{
-			PlayOneShotSound(brakeSound);
-			brakeCooldown = 0.5f; // Prevent spam
-		}
+	/// <summary>
+	/// The speed reduction factor applied to the vehicle's speed when a collision occurs.
+	/// </summary>
+	public float CollisionSpeedReduction = 0.5f;
 
-		brakeCooldown -= Time.deltaTime;
-		lastSpeed = Speed;
+	private void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.relativeVelocity.magnitude > 3f) Camera.TriggerShake();
+
+		Speed *= CollisionSpeedReduction;
 	}
-
-	private void PlayOneShotSound(SoundData soundData, float pitch = 1f)
-{
-    if (soundData != null && sfxSource != null)
-    {
-        sfxSource.pitch = pitch;
-        sfxSource.PlayOneShot(soundData.clip);
-        sfxSource.pitch = 1f; // Reset to default after
-    }
-}
-
-
-	private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.relativeVelocity.magnitude > 3f)
-    {
-        if (camHandler != null)
-        {
-            camHandler.TriggerShake();
-        }
-        else
-        {
-            Debug.LogWarning("CameraHandler is missing.");
-        }
-
-        PlayOneShotSound(crashSound); // <- Use your SoundData method
-    }
-}
 
 	#endregion
 
@@ -497,89 +491,20 @@ public class VehicleMovement : MonoBehaviour {
 	#endregion
 
 	#region Unity Callbacks
-
-	private void PlaySoundData(SoundData data)
-{
-    engineSource.clip = data.clip;
-    engineSource.volume = data.volume;
-    engineSource.pitch = data.pitch;
-    engineSource.loop = true;
-    engineSource.Play();
-}
-
-
-private float pitchOverrideTimer = 0f;
-private float pitchOverrideValue = 1f;
-
-	private void UpdateEngineSound()
-{
-	if (Speed < 0.5f) // Idle state
-	{
-		if (engineSource.clip != idleSound.clip)
-		{
-			PlaySoundData(idleSound);
-		}
-		engineSource.pitch = idleSound.pitch;
-	}
-	else
-	{
-		if (CurrentGear >= 1 && CurrentGear <= gearSounds.Length)
-		{
-			SoundData gearSound = gearSounds[CurrentGear - 1];
-
-			if (engineSource.clip != gearSound.clip)
-			{
-				PlaySoundData(gearSound);
-			}
-		}
-
-		// Apply pitch override if active
-		if (pitchOverrideTimer > 0f)
-		{
-			engineSource.pitch = pitchOverrideValue;
-			pitchOverrideTimer -= Time.deltaTime;
-		}
-		else
-		{
-			engineSource.pitch = Mathf.Lerp(1f, 2f, Mathf.Clamp01(Tachometer));
-		}
-	}
-}
-
-
-
-	private IEnumerator TemporarilyLowerEnginePitch()
-	{
-		engineSource.pitch = 0.8f;
-		yield return new WaitForSeconds(0.3f);
-		engineSource.pitch = Mathf.Lerp(1f, 2f, Tachometer); // Restore normal pitch
-	}
-
-
-	private void Start()
-	{
-		previousGear = CurrentGear;
-		lastSpeed = Speed;
-
-	}
 	
-		private void Update()
-	{
+	private void Update() {
 
 		#region Inputs
 
 		if (Input.IsDecelerating) FootBrake();
 		else if (Input.IsHandBraking) HandBrake();
 		else if (Input.IsAccelerating) Accelerate();
-		else
-		{
+		else {
 			NaturallyDecelerate();
 			BrakeTime = 0;
-
 		}
 
-		if (!Input.IsDecelerating && Mathf.Abs(Speed) < 0.1f)
-		{
+		if (!Input.IsDecelerating && Mathf.Abs(Speed) < 0.1f) {
 			BrakeTime = 0;
 			BrakeDecel = 0;
 		}
@@ -587,40 +512,29 @@ private float pitchOverrideValue = 1f;
 		//Inputs are handled in the method itself.
 		Steer();
 
-		if (Input.IsGearingUp) ShiftGear(1, true);
-		if (Input.IsGearingDown) ShiftGear(-1, true);
+		if (Input.OnGearUp) ShiftGear(1, true);
+		if (Input.OnGearDown) ShiftGear(-1, true);
 
-		if (Input.SelectGear1) ChangeGear(1, true);
-		if (Input.SelectGear2) ChangeGear(2, true);
-		if (Input.SelectGear3) ChangeGear(3, true);
-		if (Input.SelectGearR) ChangeGear(-1, true);
+		if (Input.OnGear1) ChangeGear(1, true);
+		if (Input.OnGear2) ChangeGear(2, true);
+		if (Input.OnGear3) ChangeGear(3, true);
+		if (Input.OnGearR) ChangeGear(-1, true);
 
+		if (Input.OnHandBrake) AudioHandler.Play(VehicleSFX.OneShotSFX.Handbrake);
 
-
-		if (CurrentGear != previousGear)
-		{
-			bool isDownshift = CurrentGear < previousGear;
-
-			PlayOneShotSound(gearShiftSound, isDownshift ? 0.9f : 1.1f);
-			previousGear = CurrentGear;
-
-			if (isDownshift)
-			{
-				StartCoroutine(TemporarilyLowerEnginePitch());
-			}
+		if (Input.OnHonk) {
+			//TODO: Honk logic here?
+			AudioHandler.Play(VehicleSFX.OneShotSFX.Horn);
 		}
 		#endregion
-
 
 		AutoShift(UseAutoShift);
 
 		UpdateTachometer();
-		UpdateBrakingSound();
-		UpdateEngineSound();
 	}
 
 	private void FixedUpdate() {
-		if (Speed != 0) Body.linearVelocity = transform.up * Speed * Time.fixedDeltaTime;
+		if (Speed != 0) Body.linearVelocity = Speed * Time.fixedDeltaTime * transform.up;
 		else Body.linearVelocity = Vector2.zero;
 
 		// Project current velocity onto the forward vector only

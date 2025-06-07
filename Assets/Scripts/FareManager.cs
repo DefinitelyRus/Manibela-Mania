@@ -164,7 +164,7 @@ public class FareManager : MonoBehaviour {
 	/// <param name="debug">Whether to print logs to console.</param>
 	private void ScanMouseClick(bool debug = false) {
 		//Clear staged coins and give change
-		if (InputManager.ClickedLeft) {
+		if (InputManager.OnMouse1) {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 			if (Collider.OverlapPoint(mousePosition)) {
@@ -175,7 +175,7 @@ public class FareManager : MonoBehaviour {
 		}
 
 		//Clear staged coins
-		else if (InputManager.ClickedRight) {
+		else if (InputManager.OnMouse2) {
 			if (StagedChange > 0 || StagedCoins.Count > 0) {
 				StagedChange = 0;
 				StagedCoins.Clear();

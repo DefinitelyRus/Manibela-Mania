@@ -14,31 +14,34 @@ public class InputManager : MonoBehaviour
 	public KeyCode Gear2 = KeyCode.Alpha2;
 	public KeyCode Gear3 = KeyCode.Alpha3;
 	public KeyCode GearR = KeyCode.R;
+	public KeyCode Honk = KeyCode.H;
 
 	public bool IsAccelerating { get; private set; } = false;
 	public bool IsDecelerating { get; private set; } = false;
 	public bool IsHandBraking { get; private set; } = false;
-	public bool IsGearingUp { get; private set; } = false;
-	public bool IsGearingDown { get; private set; } = false;
-	public bool SelectGear1 { get; private set; } = false;
-	public bool SelectGear2 { get; private set; } = false;
-	public bool SelectGear3 { get; private set; } = false;
-	public bool SelectGearR { get; private set; } = false;
+	public bool OnHandBrake { get; private set; } = false;
+	public bool OnGearUp { get; private set; } = false;
+	public bool OnGearDown { get; private set; } = false;
+	public bool OnGear1 { get; private set; } = false;
+	public bool OnGear2 { get; private set; } = false;
+	public bool OnGear3 { get; private set; } = false;
+	public bool OnGearR { get; private set; } = false;
+	public bool OnHonk { get; private set; } = false;
 	public float Steering { get; private set; } = 0;
 
 	[Header("Menu Controls")]
 	public KeyCode MenuAccept = KeyCode.Return;
 	public KeyCode MenuCancel = KeyCode.Escape;
 
-	public bool PressedAccept { get; private set; } = false;
-	public bool PressedCancel { get; private set; } = false;
+	public bool OnAccept { get; private set; } = false;
+	public bool OnCancel { get; private set; } = false;
 
 	[Header("Mouse Controls")]
 	public KeyCode MouseLeft = KeyCode.Mouse0;
 	public KeyCode MouseRight = KeyCode.Mouse1;
 
-	public bool ClickedLeft { get; private set; } = false;
-	public bool ClickedRight { get; private set; } = false;
+	public bool OnMouse1 { get; private set; } = false;
+	public bool OnMouse2 { get; private set; } = false;
 
 	public void InputListener() {
 
@@ -47,6 +50,7 @@ public class InputManager : MonoBehaviour
 		IsAccelerating = Input.GetKey(MoveForward);
 		IsDecelerating = Input.GetKey(MoveBackward);
 		IsHandBraking = Input.GetKey(Handbrake);
+		OnHandBrake = Input.GetKeyDown(Handbrake);
 
 		if (Input.GetKey(MoveLeft)) Steering = 1;
 		else if (Input.GetKey(MoveRight)) Steering = -1;
@@ -57,27 +61,27 @@ public class InputManager : MonoBehaviour
 
 		#region Gears
 
-		IsGearingUp = Input.GetKey(GearUp);
-		IsGearingDown = Input.GetKeyDown(GearDown);
+		OnGearUp = Input.GetKeyDown(GearUp);
+		OnGearDown = Input.GetKeyDown(GearDown);
 
-		SelectGear1 = Input.GetKeyDown(Gear1);
-		SelectGear2 = Input.GetKeyDown(Gear2);
-		SelectGear3 = Input.GetKeyDown(Gear3);
-		SelectGearR = Input.GetKeyDown(GearR);
+		OnGear1 = Input.GetKeyDown(Gear1);
+		OnGear2 = Input.GetKeyDown(Gear2);
+		OnGear3 = Input.GetKeyDown(Gear3);
+		OnGearR = Input.GetKeyDown(GearR);
 
 		#endregion
 
 		#region Menu Controls
 
-		PressedAccept = Input.GetKeyDown(MenuAccept);
-		PressedCancel = Input.GetKeyDown(MenuCancel);
+		OnAccept = Input.GetKeyDown(MenuAccept);
+		OnCancel = Input.GetKeyDown(MenuCancel);
 
 		#endregion
 
 		#region Mouse Controls
 
-		ClickedLeft = Input.GetKeyDown(MouseLeft);
-		ClickedRight = Input.GetKeyDown(MouseRight);
+		OnMouse1 = Input.GetKeyDown(MouseLeft);
+		OnMouse2 = Input.GetKeyDown(MouseRight);
 
 		#endregion
 	}
