@@ -119,7 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
 --- !u!1 &18095528
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,9 +464,7 @@ MonoBehaviour:
   Collider: {fileID: 443980293}
   InputManager: {fileID: 18095529}
 --- !u!1 &519420028
-========
 --- !u!1 &334063622
->>>>>>>> aren-branch:Assets/Scenes/Road.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -604,7 +601,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -672,9 +668,7 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
-========
 --- !u!1 &731737706
->>>>>>>> aren-branch:Assets/Scenes/Road.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,7 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bd0934517997a4b95e01c174b035de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
   m_ComponentVersion: 2
   m_LightType: 4
   m_BlendStyleIndex: 0
@@ -746,7 +739,6 @@ MonoBehaviour:
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
 --- !u!4 &619394802
-========
   moveSpeed: 5
 --- !u!212 &731737708
 SpriteRenderer:
@@ -804,17 +796,13 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &731737709
->>>>>>>> aren-branch:Assets/Scenes/Road.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
   m_GameObject: {fileID: 619394800}
-========
   m_GameObject: {fileID: 731737706}
->>>>>>>> aren-branch:Assets/Scenes/Road.unity
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -51, y: 52.87252, z: 0}
@@ -1259,7 +1247,6 @@ MonoBehaviour:
   FareManager: {fileID: 2386359415073099172}
   Collider: {fileID: 1691781255}
   InputManager: {fileID: 18095529}
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
 --- !u!1 &2132016146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,14 +1660,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-========
->>>>>>>> aren-branch:Assets/Scenes/Road.unity
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-<<<<<<<< HEAD:Assets/Scenes/Rus.unity
-  - {fileID: 519420032}
-  - {fileID: 619394802}
-  - {fileID: 2132016147}
-  - {fileID: 18095530}
