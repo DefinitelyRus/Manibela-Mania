@@ -5,10 +5,12 @@ public class UIhandler : MonoBehaviour
 {
     [SerializeField] GameObject SettingsUI;
 
+   
+
     public void open()
     {
         SettingsUI.SetActive(true);
-     }
+    }
 
     public void OnExit()
     {
@@ -19,16 +21,36 @@ public class UIhandler : MonoBehaviour
 
     public void ChangeScene()
     {
-            SceneManager.LoadScene("MainMenu");
-       
+        Destroy(GameManager.Instance.gameObject);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void RestartScene()
     {
-            SceneManager.LoadScene("MainRoad");
-       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void doExitGame() 
-    { Application.Quit(); }
-}
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void StartNextDay()
+    {
+        SceneManager.sceneLoaded += OnSceneLoadedAfterNextDay;
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnSceneLoadedAfterNextDay(Scene scene, LoadSceneMode mode)
+    {
+        // Reconnect and resume gameplay only AFTER the scene is fully loaded
+        GameManager.Instance.ReconnectUI();
+        GameManager.Instance.StartNextDay();
+
+        // Unregister so this only runs once
+        SceneManager.sceneLoaded -= OnSceneLoadedAfterNextDay;
+    }
+    
+    
+    }
+

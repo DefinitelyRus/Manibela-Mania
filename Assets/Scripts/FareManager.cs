@@ -23,6 +23,7 @@ public class FareManager : MonoBehaviour {
 
 	public int MaximumPay = 1000;
 
+	
 	#endregion
 
 	#region Passengers
