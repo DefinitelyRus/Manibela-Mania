@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIhandler : MonoBehaviour
 {
@@ -13,4 +14,21 @@ public class UIhandler : MonoBehaviour
     {
         SettingsUI.SetActive(false);
     }
+
+    public string sceneName;
+
+    public void ChangeScene()
+    {
+            SceneManager.LoadScene("MainMenu");
+       
+    }
+
+    public void RestartScene()
+    {
+            SceneManager.LoadScene("MainRoad");
+       
+    }
+
+    public void doExitGame() 
+    { Application.Quit(); }
 }

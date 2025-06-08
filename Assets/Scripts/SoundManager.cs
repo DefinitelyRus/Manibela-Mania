@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour
 
             // Optional: reassign music sources if they are scene-based (NOT recommended)
 
-
+            SwitchToGameMusic();
             ApplyVolumeSettings();
         }
     }
@@ -206,6 +206,8 @@ public class SoundManager : MonoBehaviour
         var temp = currentMusicSource;
         currentMusicSource = nextMusicSource;
         nextMusicSource = temp;
+
+        Debug.Log("Crossfading to: " + newClip.name);
     }
 
 

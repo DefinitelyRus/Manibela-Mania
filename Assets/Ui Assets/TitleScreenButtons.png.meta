@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: dacbb2d091a6d2941b688e857cc8dcee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5717055866500483674
+    second: TitleScreenButtons_0
+  - first:
+      213: 3636315818206914426
+    second: TitleScreenButtons_1
+  - first:
+      213: 4056931147706693750
+    second: TitleScreenButtons_2
+  - first:
+      213: -3185216710378138241
+    second: TitleScreenButtons_3
+  - first:
+      213: 3441023762265039177
+    second: TitleScreenButtons_4
+  - first:
+      213: 3086627112156214290
+    second: TitleScreenButtons_5
+  - first:
+      213: 1659166314447285107
+    second: TitleScreenButtons_6
+  - first:
+      213: -7614436020952950991
+    second: TitleScreenButtons_7
+  - first:
+      213: 5384026395690583705
+    second: TitleScreenButtons_8
+  - first:
+      213: -2831279196801747692
+    second: TitleScreenButtons_9
+  - first:
+      213: -315978232372946844
+    second: TitleScreenButtons_10
+  - first:
+      213: -5874685215409085079
+    second: TitleScreenButtons_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TitleScreenButtons_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 148
+        width: 126
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5fc2ccaffe8a0b0800000000000000
+      internalID: -5717055866500483674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 147
+        width: 127
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a776b5b78f9c67230800000000000000
+      internalID: 3636315818206914426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 148
+        width: 129
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6787641626d1d4830800000000000000
+      internalID: 4056931147706693750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 100
+        width: 126
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75d5452746dbc3d0800000000000000
+      internalID: -3185216710378138241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 99
+        width: 127
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9416c7561e8f0cf20800000000000000
+      internalID: 3441023762265039177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 129
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214392e3107e5da20800000000000000
+      internalID: 3086627112156214290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 52
+        width: 126
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37bacebe8fa860710800000000000000
+      internalID: 1659166314447285107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 51
+        width: 127
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137192e28c6145690800000000000000
+      internalID: -7614436020952950991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_8
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 52
+        width: 129
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996c6782b77e7ba40800000000000000
+      internalID: 5384026395690583705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4
+        width: 126
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415bdae329645b8d0800000000000000
+      internalID: -2831279196801747692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3
+        width: 127
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46897a6c87b6d9bf0800000000000000
+      internalID: -315978232372946844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleScreenButtons_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 4
+        width: 129
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9656d480cece87ea0800000000000000
+      internalID: -5874685215409085079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TitleScreenButtons_0: -5717055866500483674
+      TitleScreenButtons_1: 3636315818206914426
+      TitleScreenButtons_10: -315978232372946844
+      TitleScreenButtons_11: -5874685215409085079
+      TitleScreenButtons_2: 4056931147706693750
+      TitleScreenButtons_3: -3185216710378138241
+      TitleScreenButtons_4: 3441023762265039177
+      TitleScreenButtons_5: 3086627112156214290
+      TitleScreenButtons_6: 1659166314447285107
+      TitleScreenButtons_7: -7614436020952950991
+      TitleScreenButtons_8: 5384026395690583705
+      TitleScreenButtons_9: -2831279196801747692
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
