@@ -77,7 +77,7 @@ public class Sakay : MonoBehaviour
                 }
 
 				if (!GameObject.Find("Jeep").TryGetComponent<PassengerCarrier>(out var carrier)) Debug.LogError("[Sakay] Passenger Carrier not found on Jeep object.");
-				else carrier.AbductPassenger();
+				else carrier.AbductPassenger(true);
 
 				Destroy(timerBarInstance);
                 Destroy(gameObject);

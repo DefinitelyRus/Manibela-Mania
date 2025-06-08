@@ -68,10 +68,10 @@ public class FareManager : MonoBehaviour {
 		//Remove from queue, add to balance
 		CurrentPassenger = PassengerQueue.Dequeue();
 		Balance += CurrentPassenger.FareToPay;
-		if (debug) Debug.Log($"[FareManager] Accepted payment from new CurrentPassenger.");
+		if (debug) Debug.Log($"[FareManager] Accepted payment: P{CurrentPassenger.FareToPay}");
 
 		//Mark as fully paid if no change
-		if (CurrentPassenger.FareOwed == CurrentPassenger.FareToPay) {
+		if (CurrentPassenger.FareOwed >= CurrentPassenger.FareToPay) {
 			CurrentPassenger.FullyPaid = true;
 			if (debug) Debug.Log($"[FareManager] Passenger has fully paid their fare: P{CurrentPassenger.FareToPay}.");
 
@@ -168,6 +168,8 @@ public class FareManager : MonoBehaviour {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 			if (Collider.OverlapPoint(mousePosition)) {
+				if (debug) Debug.Log("[FareManager] Mouse click detected on accept button.");
+
 				GiveChange(debug);
 				StagedChange = 0;
 				StagedCoins.Clear();
@@ -199,7 +201,7 @@ public class FareManager : MonoBehaviour {
 	#region Unity Callbacks
 
 	private void Update() {
-		ScanMouseClick();
+		ScanMouseClick(true);
 	}
 
 	#endregion
