@@ -1,146 +1,265 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+
 public class SoundManager : MonoBehaviour
+
 {
     public static SoundManager Instance;
-    public AudioSource loopSource;  // Engine, idle, brake
-    public AudioSource sfxSource;   // One-shot SFX
-    public AudioSource musicSourceA;
 
+    public AudioSource loopSource;   // e.g., engine
+    public AudioSource sfxSource;    // one-shot
+    public AudioSource musicSourceA;
     public AudioSource musicSourceB;
 
+    public AudioClip[] menuMusicTracks;
+    public AudioClip[] gameMusicTracks;
+
     private AudioSource currentMusicSource;
-
     private AudioSource nextMusicSource;
-
-
-    public AudioClip[] MusicTracks; // Array of music tracks
-    public AudioSource Music; // Music source for background music
     private Coroutine fadeCoroutine;
 
+    private List<AudioSource> extraSFXSources = new List<AudioSource>();
+
+    [Range(0f, 1f)] public float masterVolume = 1f;
+    [Range(0f, 1f)] public float musicVolume = 1f;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+
+    private bool isInMenu = true;
 
 
-    void Start()
+
+    public void RegisterExtraSFXSource(AudioSource source)
     {
-        MusicTracks = Resources.LoadAll<AudioClip>("Music");
-
-        currentMusicSource = musicSourceA;
-        nextMusicSource = musicSourceB;
-
-        if (MusicTracks.Length > 0)
-            StartCoroutine(PlayMusicLoop());
+        if (source != null && !extraSFXSources.Contains(source))
+        {
+            extraSFXSources.Add(source);
+            ApplyVolumeSettings();
+        }
     }
-
+    public void StopMusicLoop()
+    {
+        StopAllCoroutines();
+        if (currentMusicSource != null)
+            currentMusicSource.Stop();
+        if (nextMusicSource != null)
+            nextMusicSource.Stop();
+    }
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Only assign music sources if available
+        if (musicSourceA != null && musicSourceB != null)
+        {
+            currentMusicSource = musicSourceA;
+            nextMusicSource = musicSourceB;
+        }
+
+        LoadAudioSettings();
     }
 
-    public void PlaySound(SoundData soundData)
+    public void SetSceneSFXSources(AudioSource newSFX, AudioSource newLoop)
     {
-        PlaySound(soundData, Vector3.zero); // Use world origin or any default
+        sfxSource = newSFX;
+        loopSource = newLoop;
+        ApplyVolumeSettings();
     }
 
-    public void PlaySound(SoundData soundData, Vector3 position)
-    {
-        if (soundData == null || soundData.clip == null) return;
 
-        sfxSource.transform.position = position;
-        sfxSource.clip = soundData.clip;
-        sfxSource.volume = soundData.volume;
-        sfxSource.loop = soundData.loop;
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Example: only reassign in gameplay scene
+        if (scene.name == "MainRoad")
+        {
+            loopSource = GameObject.Find("LoopSource")?.GetComponent<AudioSource>();
+            sfxSource = GameObject.Find("SFXSource")?.GetComponent<AudioSource>();
+
+            // Optional: reassign music sources if they are scene-based (NOT recommended)
+
+
+            ApplyVolumeSettings();
+        }
+    }
+
+
+    void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
+    public void StopMusic()
+    {
+        StopAllCoroutines();
+
+        if (currentMusicSource != null) currentMusicSource.Stop();
+        if (nextMusicSource != null) nextMusicSource.Stop();
+    }
+    public void PlayMenuMusic()
+    {
+        isInMenu = true;
+        StopAllCoroutines();
+        StartCoroutine(PlayMusicLoop(menuMusicTracks));
+    }
+
+    void Start()
+    {
+        if (menuMusicTracks != null && menuMusicTracks.Length > 0 && musicSourceA != null && musicSourceB != null)
+        {
+            PlayMenuMusic(); // Safe to call only if music sources are present
+        }
+    }
+    public void SwitchToGameMusic()
+    {
+        isInMenu = false;
+        StopAllCoroutines();
+        StartCoroutine(PlayMusicLoop(gameMusicTracks));
+    }
+
+    public void SwitchToMenuMusic()
+    {
+        isInMenu = true;
+        StopAllCoroutines();
+        StartCoroutine(PlayMusicLoop(menuMusicTracks));
+    }
+
+
+    private IEnumerator PlayMusicLoop(AudioClip[] tracks)
+    {
+        if (tracks == null || tracks.Length == 0 || currentMusicSource == null || nextMusicSource == null)
+            yield break;
+
+        while (true)
+        {
+            AudioClip nextClip;
+
+            // If only one track, no need to check equality to prevent infinite loop (culprit for infinite loop ffs)
+            if (tracks.Length == 1)
+            {
+                nextClip = tracks[0];
+            }
+            else
+            {
+                do
+                {
+                    nextClip = tracks[Random.Range(0, tracks.Length)];
+                }
+                while (nextClip == currentMusicSource.clip);
+            }
+
+            yield return StartCoroutine(CrossfadeTo(nextClip, 2f));
+
+            // Safely wait for the current music to finish playing
+            yield return new WaitUntil(() => currentMusicSource != null && !currentMusicSource.isPlaying);
+        }
+    }
+
+
+
+
+    private IEnumerator CrossfadeTo(AudioClip newClip, float duration)
+    {
+        if (nextMusicSource == null || currentMusicSource == null)
+            yield break;
+
+        nextMusicSource.clip = newClip;
+        nextMusicSource.volume = 0f;
+        nextMusicSource.Play();
+
+        float time = 0f;
+        float startVolume = currentMusicSource.volume;
+
+        while (time < duration)
+        {
+            // Stop if either source is destroyed mid-fade
+            if (nextMusicSource == null || currentMusicSource == null)
+                yield break;
+
+            time += Time.deltaTime;
+            float t = time / duration;
+
+            currentMusicSource.volume = Mathf.Lerp(startVolume, 0f, t);
+            nextMusicSource.volume = Mathf.Lerp(0f, startVolume, t);
+
+            yield return null;
+        }
+
+        if (currentMusicSource != null)
+        {
+            currentMusicSource.Stop();
+            currentMusicSource.volume = startVolume;
+        }
+
+        var temp = currentMusicSource;
+        currentMusicSource = nextMusicSource;
+        nextMusicSource = temp;
+    }
+
+
+
+    public void PlayUISound(AudioClip clip)
+    {
+        if (clip != null)
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, masterVolume * sfxVolume);
+    }
+
+    public void PlaySound(SoundData sound)
+    {
+        if (sound == null || sound.clip == null) return;
+        sfxSource.clip = sound.clip;
+        sfxSource.volume = masterVolume * sfxVolume * sound.volume;
+        sfxSource.loop = sound.loop;
         sfxSource.Play();
     }
 
-    public void CrossfadeSound(SoundData newSound, float duration)
+    public void ApplyVolumeSettings()
     {
-        if (newSound == null || newSound.clip == null) return;
+        if (musicSourceA) musicSourceA.volume = masterVolume * musicVolume;
+        if (musicSourceB) musicSourceB.volume = masterVolume * musicVolume;
+        if (sfxSource) sfxSource.volume = masterVolume * sfxVolume;
+        if (loopSource) loopSource.volume = masterVolume * sfxVolume;
 
-        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        fadeCoroutine = StartCoroutine(FadeToNewSound(newSound, duration));
-    }
-
-    private IEnumerator FadeToNewSound(SoundData newSound, float duration)
-    {
-        float time = 0f;
-        float startVolume = loopSource.volume;
-
-        // If we're switching clips, fade out current
-        while (time < duration)
+        foreach (var src in extraSFXSources)
         {
-            time += Time.deltaTime;
-            loopSource.volume = Mathf.Lerp(startVolume, 0f, time / duration);
-            yield return null;
-        }
-
-        loopSource.clip = newSound.clip;
-        loopSource.volume = 0f;
-        loopSource.loop = newSound.loop;
-        loopSource.Play();
-
-        // Fade in new clip
-        time = 0f;
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            loopSource.volume = Mathf.Lerp(0f, newSound.volume, time / duration);
-            yield return null;
-        }
-
-        loopSource.volume = newSound.volume;
-    }
-
-    private IEnumerator PlayMusicLoop()
-    {
-        while (true)
-        {
-            if (!currentMusicSource.isPlaying)
-            {
-                AudioClip nextClip;
-
-                // Choose a new clip different from current
-                do
-                {
-                    nextClip = MusicTracks[Random.Range(0, MusicTracks.Length)];
-                } while (nextClip == currentMusicSource.clip || nextClip.name == "Space Cruise");
-
-                Debug.Log($"[SoundManager] Crossfading to: Ben Prunty - {nextClip.name}");
-
-                // Start crossfade
-                yield return StartCoroutine(CrossfadeTo(nextClip, 3f));  // 3s fade duration
-            }
-
-            yield return null;
+            if (src != null)
+                src.volume = masterVolume * sfxVolume;
         }
     }
 
-private IEnumerator CrossfadeTo(AudioClip newClip, float duration) {
-    nextMusicSource.clip = newClip;
-    nextMusicSource.volume = 0f;
-    nextMusicSource.Play();
-
-    float time = 0f;
-    float startVolume = currentMusicSource.volume;
-
-    while (time < duration) {
-        time += Time.deltaTime;
-        float t = time / duration;
-
-        currentMusicSource.volume = Mathf.Lerp(startVolume, 0f, t);
-        nextMusicSource.volume = Mathf.Lerp(0f, startVolume, t);
-
-        yield return null;
+    public void SaveAudioSettings()
+    {
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.Save();
     }
 
-    currentMusicSource.Stop();
-    currentMusicSource.volume = startVolume;
-
-    // Swap references
-    AudioSource temp = currentMusicSource;
-    currentMusicSource = nextMusicSource;
-    nextMusicSource = temp;
+    public void LoadAudioSettings()
+    {
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        ApplyVolumeSettings();
+    }
+    
+    public float GetEffectiveSFXVolume()
+{
+    return masterVolume * sfxVolume;
 }
 
 }
+
+
