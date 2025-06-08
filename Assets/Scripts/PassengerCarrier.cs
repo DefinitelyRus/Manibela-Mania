@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PassengerCarrier : MonoBehaviour
@@ -71,7 +72,9 @@ public class PassengerCarrier : MonoBehaviour
 	/// </summary>
 	public void AbductPassenger(bool debug = false) {
 		BoardedPassenger newPassenger = new(FareManager);
-		AddPassenger(newPassenger);
+		AddPassenger(newPassenger, debug);
+
+		StartCoroutine(PaymentWait(newPassenger, Random.Range(3f, 5f), debug));
 
 		if (Passengers.Count > MaximumPassengers) {
 			EjectPassenger(newPassenger);
@@ -79,6 +82,12 @@ public class PassengerCarrier : MonoBehaviour
 		}
 
 		else if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger successfully. ({Passengers.Count}/{MaximumPassengers})");
+	}
+
+	private IEnumerator PaymentWait(BoardedPassenger passenger, float seconds, bool debug = false) {
+		yield return new WaitForSeconds(seconds);
+		Debug.Log("[PassengerCarrier] Passenger is ready to pay fare.");
+		passenger.Pay();
 	}
 
 	/// <summary>

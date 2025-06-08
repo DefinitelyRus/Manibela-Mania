@@ -24,7 +24,7 @@ public class CashStash : MonoBehaviour
 			if (Collider.OverlapPoint(mousePosition)) {
 				FareManager.StageChange(CashValue);
 
-				if (debug) Debug.Log($"[CashStash] Staged P{CashValue}. Total: {FareManager.StagedCoins.Count}.");
+				if (debug) Debug.Log($"[CashStash] Staged P{CashValue}. Total: {FareManager.StagedChange}.");
 			}
 		}
 
@@ -33,7 +33,7 @@ public class CashStash : MonoBehaviour
 			if (Collider.OverlapPoint(Input.mousePosition)) {
 				FareManager.UnstageChange(CashValue);
 
-				if (debug) Debug.Log($"[CashStash] Unstaged P{CashValue}. Total: {FareManager.StagedCoins.Count}.");
+				if (debug) Debug.Log($"[CashStash] Unstaged P{CashValue}. Total: {FareManager.StagedChange}.");
 			}
 		}
 	}
@@ -48,7 +48,7 @@ public class CashStash : MonoBehaviour
 	}
 
 	private void Update() {
-		ScanMouseClick();
+		ScanMouseClick(true);
 	}
 
 	#endregion

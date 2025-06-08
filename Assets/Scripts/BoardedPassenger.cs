@@ -36,6 +36,8 @@ public class BoardedPassenger {
 	/// </summary>
 	public void Pay() {
 		FareManager.QueuePayment(this);
+
+		//TODO: Enable their payment popup bubble here. Maybe SFX too.
 	}
 
 	/// <summary>
