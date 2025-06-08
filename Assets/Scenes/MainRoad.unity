@@ -1686,9 +1686,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FareManager: {fileID: 1804445000}
   PassengerPrefab: {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  JeepM: {fileID: 775778071}
   MaximumPassengers: 6
   EntranceLocation: {x: 0, y: -1}
-  EjectAngle: 180
+  MinPayWait: 3
+  MaxPayWait: 5
+  DropOffXLeft: 71
+  DropOffXRight: 72
+  DropOffXOffset: 0.5
+  DropOffDistanceMin: 100
+  DropOffDistanceMax: 1500
+  DropOffWithin: 50
 --- !u!1 &777286257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,6 +3081,12 @@ MonoBehaviour:
   StagedCoins: 
   Collider: {fileID: 1804444999}
   InputManager: {fileID: 18095529}
+  TotalPenalty: 0
+  NetBalance: 0
+  CollisionPenalty: 100
+  NoPayPenalty: 300
+  SlowChangePenalty: 300
+  MissedStopPenalty: 50
 --- !u!1 &1894920415
 GameObject:
   m_ObjectHideFlags: 0
