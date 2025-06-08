@@ -8,9 +8,7 @@ public class SceneInitializer : MonoBehaviour
     void Start()
     {
 
-
-        VehicleMovement vehicle = FindObjectOfType<VehicleMovement>();
-        if (vehicle == null)
+        if (!GameObject.Find("Jeep").TryGetComponent<VehicleMovement>(out var vehicle))
         {
             Debug.LogWarning("VehicleMovement not found in scene.");
             return;
@@ -30,9 +28,9 @@ public class SceneInitializer : MonoBehaviour
             SoundManager.Instance.SwitchToGameMusic();
         }
         
-          if (SoundManager.Instance != null && engineSource != null)
-    {
-        SoundManager.Instance.RegisterExtraSFXSource(engineSource);
-    }
+        if (SoundManager.Instance != null && engineSource != null)
+		{
+			SoundManager.Instance.RegisterExtraSFXSource(engineSource);
+		}
     }
 }
