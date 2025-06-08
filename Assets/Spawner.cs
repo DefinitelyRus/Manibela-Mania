@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class VerticalWorldSpawner : MonoBehaviour
@@ -84,35 +84,35 @@ public class VerticalWorldSpawner : MonoBehaviour
         {
             // After forced spawns, start with standard logic
             prefabIndex = Random.Range(0, 3);
-            Debug.Log("First random spawn after forced spawns");
+            //Debug.Log("First random spawn after forced spawns");
         }
         else if (lastPrefabIndex == 0)
         {
             prefabIndex = Random.Range(3, 6);
-            Debug.Log("Transition spawn after main area");
+            //Debug.Log("Transition spawn after main area");
         }
         else if (lastPrefabIndex == 1 || lastPrefabIndex == 2)
         {
             prefabIndex = Random.Range(0, 3);
-            Debug.Log("Main area spawn after main/transition");
+            //Debug.Log("Main area spawn after main/transition");
         }
         else if (lastPrefabIndex == 3)
         {
             prefabIndex = Random.Range(0, 3);
-            Debug.Log("Main area spawn after transition");
+            //Debug.Log("Main area spawn after transition");
         }
         else if (lastPrefabIndex == 4 || lastPrefabIndex == 5)
         {
             prefabIndex = Random.Range(3, 6);
-            Debug.Log("Transition spawn after transition");
+            //Debug.Log("Transition spawn after transition");
         }
         else
         {
             prefabIndex = Random.Range(0, worldPrefabs.Length);
-            Debug.Log("Fallback random spawn");
+            //Debug.Log("Fallback random spawn");
         }
 
-        Vector3 spawnPos = new Vector3(0f, nextSpawnY, 0f);
+        Vector3 spawnPos = new(0f, nextSpawnY, 0f);
         GameObject newWorld = Instantiate(worldPrefabs[prefabIndex], spawnPos, Quaternion.identity);
         
         if (newWorld != null)
@@ -120,11 +120,8 @@ public class VerticalWorldSpawner : MonoBehaviour
             spawnedWorlds.Add(newWorld);
             lastPrefabIndex = prefabIndex;
             nextSpawnY += worldHeight;
-
-            // Increment the area counter when a new area is spawned
-            Sakay.IncrementArea();
-            Debug.Log($"Spawned new area at Y: {spawnPos.y}, Area: {Sakay.currentArea}");
         }
+
         else
         {
             Debug.LogError($"Failed to instantiate world prefab at index {prefabIndex}");

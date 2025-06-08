@@ -46,11 +46,13 @@ public class FareManager : MonoBehaviour {
 	/// <br/><br/>
 	/// This function is called when the passenger wants to pay their fare.
 	/// </summary>
-	public void QueuePayment(BoardedPassenger passenger) {
+	public void QueuePayment(BoardedPassenger passenger, bool debug = false) {
 		if (passenger == null) {
 			Debug.LogError("[FareManager] Cannot queue payment for a null passenger.");
 			return;
 		}
+
+		if (debug) Debug.Log($"[FareManager] Queued passenger for payment.");
 
 		PassengerQueue.Enqueue(passenger);
 	}
@@ -68,12 +70,12 @@ public class FareManager : MonoBehaviour {
 		//Remove from queue, add to balance
 		CurrentPassenger = PassengerQueue.Dequeue();
 		Balance += CurrentPassenger.FareToPay;
-		if (debug) Debug.Log($"[FareManager] Accepted payment: P{CurrentPassenger.FareToPay}");
+		if (debug) Debug.Log($"[FareManager] Received payment: P{CurrentPassenger.FareToPay}");
 
 		//Mark as fully paid if no change
 		if (CurrentPassenger.FareOwed >= CurrentPassenger.FareToPay) {
 			CurrentPassenger.FullyPaid = true;
-			if (debug) Debug.Log($"[FareManager] Passenger has fully paid their fare: P{CurrentPassenger.FareToPay}.");
+			if (debug) Debug.Log($"[FareManager] Complete transaction.");
 
 			CurrentPassenger = null;
 		}
@@ -81,7 +83,7 @@ public class FareManager : MonoBehaviour {
 		//Calculate the expected change
 		else {
 			CurrentPassenger.ExpectedChange = CurrentPassenger.FareToPay - CurrentPassenger.FareOwed;
-			if (debug) Debug.Log($"[FareManager] Passenger has not fully paid their fare. Expected change: P{CurrentPassenger.ExpectedChange}.");
+			if (debug) Debug.Log($"[FareManager] Incomplete transaction. Expected change: P{CurrentPassenger.ExpectedChange}.");
 		}
 	}
 
@@ -137,6 +139,11 @@ public class FareManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="debug">Whether to print logs to console.</param>
 	public void GiveChange(bool debug = false) {
+		if (CurrentPassenger == null) {
+			Debug.LogError("[FareManager] Cannot give change to a null passenger. Was CurrentPassenger assigned properly?");
+			return;
+		}
+
 		if (CurrentPassenger.ExpectedChange <= 0) {
 			Debug.LogError("[FareManager] Cannot give change to passenger with no expected change. This is not normal behavior. Please check calculation logic.");
 			return;
@@ -195,6 +202,51 @@ public class FareManager : MonoBehaviour {
 	/// The input manager that handles mouse clicks and other inputs.
 	/// </summary>
 	public InputManager InputManager;
+
+	#endregion
+
+	#region Penalty
+
+	public int TotalPenalty = 0;
+
+	public int NetBalance = 0;
+
+	public int CollisionPenalty = 100;
+
+	public int NoPayPenalty = 300;
+
+	public int SlowChangePenalty = 300;
+
+	public int MissedStopPenalty = 50;
+
+	public enum PenaltyType {
+		None,
+		Collision,
+		NoPay,
+		SlowChange
+	}
+
+	public void Penalize(PenaltyType penaltyType, bool debug = false) {
+		switch (penaltyType) {
+			case PenaltyType.None:
+				if (debug) Debug.Log("[Passenger] No penalty applied.");
+				break;
+			case PenaltyType.Collision:
+				TotalPenalty += CollisionPenalty;
+				if (debug) Debug.Log($"[Passenger] Collision penalty: P{TotalPenalty} +P{CollisionPenalty}");
+				break;
+			case PenaltyType.NoPay:
+				TotalPenalty += NoPayPenalty;
+				if (debug) Debug.Log($"[Passenger] No pay penalty: P{TotalPenalty} +P{NoPayPenalty}");
+				break;
+			case PenaltyType.SlowChange:
+				TotalPenalty += SlowChangePenalty;
+				if (debug) Debug.Log($"[Passenger] Slow change penalty: P{TotalPenalty} +P{SlowChangePenalty}");
+				break;
+		}
+
+		NetBalance = Balance - TotalPenalty;
+	}
 
 	#endregion
 
