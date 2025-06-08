@@ -1,70 +1,66 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
     public Transform target;
-    public Vector3 offset = new Vector3(0, 20, 0);
-    public float followSpeed = 5f;
-    public bool rotateWithTarget = false;
-    public float rotationDamping = 5f;
+    public Vector2 Offset = new(0, 20);
+    public float FollowSpeed = 5f;
+    public bool RotateWithTarget = false;
+    public float RotationDamping = 5f;
 
     [Header("Clamp Settings")]
-    public bool useClamping = false;
-    public Vector2 minClamp;
-    public Vector2 maxClamp;
+    public bool DoClamping = false;
+    public Vector2 MinClamp;
+    public Vector2 MaxClamp;
 
     [Header("Camera Shake")]
-    public float shakeDuration = 0.3f;
-    public float shakeMagnitude = 0.3f;
+    public float ShakeDuration = 0.3f;
+    public float ShakeMagnitude = 0.3f;
 
-    private Vector3 currentVelocity = Vector3.zero;
-    private Vector3 shakeOffset = Vector3.zero;
-    private float shakeTimeRemaining = 0f;
+    private Vector2 CurrentVelocity = Vector3.zero;
+    private Vector2 ShakeOffset = Vector3.zero;
+    private float ShakeTimeRemaining = 0f;
 
-    void LateUpdate()
-    {
+    void LateUpdate() {
          if (target == null) return;
 
-    // Use world-space offset for top-down view
-    Vector3 desiredPosition = target.position + offset;
+		// Use world-space offset for top-down view
+		Vector2 desiredPosition = (Vector2) target.position + Offset;
 
-    // Clamp position
-    if (useClamping)
-    {
-        desiredPosition.x = Mathf.Clamp(desiredPosition.x, minClamp.x, maxClamp.x);
-        desiredPosition.z = Mathf.Clamp(desiredPosition.z, minClamp.y, maxClamp.y);
-    }
+		// Clamp position
+		if (DoClamping) {
+			desiredPosition.x = Mathf.Clamp(desiredPosition.x, MinClamp.x, MaxClamp.x);
+			desiredPosition.y = Mathf.Clamp(desiredPosition.y, MinClamp.y, MaxClamp.y);
+		}
 
-    // Smooth follow
-    transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref currentVelocity, 1f / followSpeed);
+		// Smooth follow
+		transform.position = Vector2.SmoothDamp(transform.position, desiredPosition, ref CurrentVelocity, 1f / FollowSpeed);
+		transform.position = new(transform.position.x, transform.position.y, -10f); // Ensure camera is always in front of the target in 2D space
 
-    // Camera shake
-    if (shakeTimeRemaining > 0)
-    {
-        shakeOffset = Random.insideUnitSphere * shakeMagnitude;
-        shakeOffset.y = 0f;
-        transform.position += shakeOffset;
-        shakeTimeRemaining -= Time.deltaTime;
-    }
+		// Camera shake
+		if (ShakeTimeRemaining > 0) {
+			ShakeOffset = Random.insideUnitSphere * ShakeMagnitude;
+			ShakeOffset.y = 0f;
+			transform.position += (Vector3) ShakeOffset;
+			ShakeTimeRemaining -= Time.deltaTime;
+		}
 
-    // Rotate with vehicle (optional for top-down)
-    if (rotateWithTarget)
-    {
-        Quaternion desiredRotation = Quaternion.Euler(360f, target.eulerAngles.y, 0f);
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, rotationDamping * Time.deltaTime);
-    }
-    else
-    {
-        transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-    }
+		// Rotate with vehicle (optional for top-down)
+		if (RotateWithTarget) {
+			Quaternion desiredRotation = Quaternion.Euler(0f, target.eulerAngles.y, 90f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, RotationDamping * Time.deltaTime);
+		}
+
+		else {
+			transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+		}
     }
 
     // Call this to trigger shake externally
-    public void TriggerShake(float duration = -1f, float magnitude = -1f)
-    {
-        shakeTimeRemaining = (duration > 0f) ? duration : shakeDuration;
-        shakeMagnitude = (magnitude > 0f) ? magnitude : shakeMagnitude;
-           Debug.Log("Collision detected, camera shake triggered.");
+    public void TriggerShake(float duration = -1f, float magnitude = -1f) {
+        ShakeTimeRemaining = (duration > 0f) ? duration : ShakeDuration;
+        ShakeMagnitude = (magnitude > 0f) ? magnitude : ShakeMagnitude;
+        Debug.Log("Collision detected, camera shake triggered.");
     }
 
 
