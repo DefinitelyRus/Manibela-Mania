@@ -163,6 +163,12 @@ public class PassengerCarrier : MonoBehaviour
 		//TODO: Change prefab here?
 		GameObject someDude = Instantiate(PassengerPrefab, dropoffPoint, Quaternion.identity);
 
+		//Remove passenger from seat --------------------------------------------
+		
+		//TODO: DO STUFF HERE ONLY PLS
+
+		//-----------------------------------------------------------------------
+
 		if (debug) Debug.Log($"[PassengerCarrier] Ejected passenger.");
 	}
 
