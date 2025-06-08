@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Sakay : MonoBehaviour
@@ -76,7 +76,10 @@ public class Sakay : MonoBehaviour
                     Debug.Log("Passenger limit now reached.");
                 }
 
-                Destroy(timerBarInstance);
+				if (!GameObject.Find("Jeep").TryGetComponent<PassengerCarrier>(out var carrier)) Debug.LogError("[Sakay] Passenger Carrier not found on Jeep object.");
+				else carrier.AbductPassenger();
+
+				Destroy(timerBarInstance);
                 Destroy(gameObject);
             }
         }
