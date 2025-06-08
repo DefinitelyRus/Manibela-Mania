@@ -76,7 +76,6 @@ public class PassengerCarrier : MonoBehaviour
 	/// <param name="passenger">The passenger to remove.</param>
 	public void RemovePassenger(BoardedPassenger passenger, bool debug = false) {
 		Passengers.Remove(passenger);
-
 		if (debug) Debug.Log($"[PassengerCarrier] Passenger removed. ({Passengers.Count}/{MaximumPassengers})");
 	}
 
@@ -111,21 +110,26 @@ public class PassengerCarrier : MonoBehaviour
 	/// Checks if any passengers need to be dropped off as soon as possible.
 	/// </summary>
 	private void CheckPassengerDropOffs(bool debug = false) {
-		foreach (BoardedPassenger passenger in Passengers) {
-			bool toDropOff = transform.position.y > passenger.DropOffAtY;
-			bool missedStop = transform.position.y > passenger.DropOffAtY + DropOffWithin;
+		try {
+			foreach (BoardedPassenger passenger in Passengers) {
+				bool toDropOff = transform.position.y > passenger.DropOffAtY;
+				bool missedStop = transform.position.y > passenger.DropOffAtY + DropOffWithin;
 
-			if (toDropOff) {
-				if (debug) Debug.Log($"[PassengerCarrier] Passenger {passenger} wants to be dropped off.");
-				RequestFullStop(passenger, debug);
-			}
+				if (toDropOff) {
+					if (debug) Debug.Log($"[PassengerCarrier] Passenger {passenger} wants to be dropped off.");
+					RequestFullStop(passenger, debug);
+				}
 
-			if (missedStop) {
-				int penalty = (int) (FareManager.MissedStopPenalty * Time.deltaTime);
-				FareManager.TotalPenalty += penalty;
-				if (debug) Debug.Log($"[PassengerCarrier] Missed stop! Penalty: P{FareManager.TotalPenalty} +P{penalty}");
+				if (missedStop) {
+					int penalty = (int) (FareManager.MissedStopPenalty * Time.deltaTime);
+					FareManager.TotalPenalty += penalty;
+					if (debug) Debug.Log($"[PassengerCarrier] Missed stop! Penalty: P{FareManager.TotalPenalty} +P{penalty}");
+				}
 			}
 		}
+		catch { }
+		//NOTE: An exception is thrown when Passengers is modified during iteration.
+		//Since we're removing passengers from the list, we expect this to happen.
 	}
 
 	/// <summary>
