@@ -42,10 +42,15 @@ public void OnPointerUp(PointerEventData eventData)
         buttonText.anchoredPosition = originalTextPosition;
     }
 
-    // 🔥 STOP music playback BEFORE transitioning
+    //  STOP music playback BEFORE transitioning
     if (SoundManager.Instance != null)
         SoundManager.Instance.StopMusic();
 
+    PlayerPrefs.SetInt("CurrentDay", 1);
+    PlayerPrefs.Save();
+    Debug.Log(" Reset progress to Day 1!");
+
+    //  THEN load the scene
     SceneManager.LoadScene(sceneToLoad);
 }
 
