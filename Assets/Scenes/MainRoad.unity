@@ -2481,7 +2481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FareManager: {fileID: 1804445000}
-  PassengerPrefab: {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
+  PassengerPrefab: {fileID: 6132392952324034069, guid: e6f73fc4b0da4474a8836e54d6a9507f, type: 3}
   JeepM: {fileID: 775778071}
   MaximumPassengers: 6
   EntranceLocation: {x: 0, y: -1}
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   currentDay: 1
   startingQuota: 100
   quotaIncrementPerDay: 50
-  timeLimit: 40
+  timeLimit: 300
   timer: 0
   gameEnded: 0
 --- !u!1 &1804444997
