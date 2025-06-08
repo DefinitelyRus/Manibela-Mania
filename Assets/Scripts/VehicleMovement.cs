@@ -141,7 +141,7 @@ public class VehicleMovement : MonoBehaviour {
 	/// </summary>
 	/// <param name="shiftTo">Move up or down to a specific gear.</param>
 	/// <param name="debug">Whether to print logs to console.</param>
-	private void ChangeGear(int shiftTo, bool debug = false) {
+	public void ChangeGear(int shiftTo, bool debug = false) {
 		if (shiftTo < -1 || shiftTo > 3) {
 			Debug.LogError($"[PlayerMovement] Invalid gear change. Attempting to shift to gear {shiftTo}.");
 			return;
@@ -205,7 +205,7 @@ public class VehicleMovement : MonoBehaviour {
 	/// </summary>
 	/// <param name="shiftBy">Move up or down by this many gears.</param>
 	/// <param name="debug">Whether to print logs to console.</param>
-	private void ShiftGear(int shiftBy, bool debug = false) {
+	public void ShiftGear(int shiftBy, bool debug = false) {
 		ChangeGear(CurrentGear + shiftBy, debug);
 	}
 
@@ -218,7 +218,8 @@ public class VehicleMovement : MonoBehaviour {
 
 		bool isStopping = CurrentGear > 0 && Mathf.Abs(Speed) < 500 && !Input.IsAccelerating;
 		bool acceleratingAtStop = CurrentGear == 0 && Input.IsAccelerating;
-		bool inGear1Range = Mathf.Abs(Speed) > 500 && Speed < Gear1Speed * AutoShiftDownThreshold;
+		bool toGear1Up = Speed < Gear1Speed * AutoShiftDownThreshold;
+		bool inGear1Range = toGear1Up && Mathf.Abs(Speed) > 500;
 
 		bool toGear2Up = Speed > Gear1Speed * AutoShiftUpThreshold;
 		bool toGear2Down = Speed < Gear2Speed * AutoShiftDownThreshold;
@@ -476,7 +477,10 @@ public class VehicleMovement : MonoBehaviour {
 	public float CollisionSpeedReduction = 0.5f;
 
 	private void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.relativeVelocity.magnitude > 3f) Camera.TriggerShake();
+
+		bool cameraExists = Camera != null;
+		bool significantCollision = collision.relativeVelocity.magnitude > 3f;
+		if (cameraExists && significantCollision) Camera.TriggerShake();
 
 		Speed *= CollisionSpeedReduction;
 	}
