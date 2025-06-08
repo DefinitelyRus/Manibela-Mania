@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SceneInitializer : MonoBehaviour
 {
@@ -22,8 +22,8 @@ public class SceneInitializer : MonoBehaviour
             return;
         }
 
-        vehicle.engineSource = SoundManager.Instance.loopSource;
-        vehicle.sfxSource = SoundManager.Instance.sfxSource;
+        //vehicle.engineSource = SoundManager.Instance.loopSource;
+        //vehicle.sfxSource = SoundManager.Instance.sfxSource;
 
         if (SoundManager.Instance != null)
         {
