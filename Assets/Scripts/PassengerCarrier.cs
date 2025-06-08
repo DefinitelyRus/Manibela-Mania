@@ -20,6 +20,8 @@ public class PassengerCarrier : MonoBehaviour
 	/// </summary>
 	public GameObject PassengerPrefab;
 
+	public VehicleMovement JeepM;
+
 	#endregion
 
 	#region Infil & Exfil
@@ -28,19 +30,30 @@ public class PassengerCarrier : MonoBehaviour
 	/// The maximum number of passengers that the carrier can hold.
 	/// </summary>
 	[Header("Infil & Exfil")]
-	public int MaximumPassengers = 16;
+	public int MaximumPassengers = 6;
 
 	/// <summary>
 	/// The position where the passengers will spawn at when they're ejected.
 	/// </summary>
 	public Vector2 EntranceLocation;
 
-	/// <summary>
-	/// The direction the passenger will face after being ejected from the vehicle.
-	/// </summary>
-	public float EjectAngle = 180f;
+	public float MinPayWait = 3f;
 
-	public List<BoardedPassenger> Passengers { get; private set; } = new();
+	public float MaxPayWait = 5f;
+
+	public float DropOffXLeft = 71f;
+
+	public float DropOffXRight = 72f;
+	
+	public float DropOffXOffset = 0.5f;
+
+	public float DropOffDistanceMin = 500f;
+
+	public float DropOffDistanceMax = 5000f;
+
+	public float DropOffWithin = 800f;
+
+	public List<BoardedPassenger> Passengers = new();
 
 	/// <summary>
 	/// Adds a passenger to the carrier if there is space.
@@ -71,37 +84,90 @@ public class PassengerCarrier : MonoBehaviour
 	/// Creates a new passenger object and adds it to the carrier.
 	/// </summary>
 	public void AbductPassenger(bool debug = false) {
-		BoardedPassenger newPassenger = new(FareManager);
+		BoardedPassenger newPassenger = new(FareManager, this, debug);
+
 		AddPassenger(newPassenger, debug);
 
-		StartCoroutine(PaymentWait(newPassenger, Random.Range(3f, 5f), debug));
+		StartCoroutine(PaymentWait(newPassenger, Random.Range(MinPayWait, MaxPayWait), debug));
 
 		if (Passengers.Count > MaximumPassengers) {
-			EjectPassenger(newPassenger);
+			EjectPassenger(newPassenger, EntranceLocation);
 			if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger but exceeded capacity. Ejecting passenger.");
 		}
 
 		else if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger successfully. ({Passengers.Count}/{MaximumPassengers})");
 	}
 
+	/// <summary>
+	/// Waits for a specified number of seconds before paying the passenger's fare.
+	/// </summary>
 	private IEnumerator PaymentWait(BoardedPassenger passenger, float seconds, bool debug = false) {
+		if (debug) Debug.Log($"[PassengerCarrier] Waiting {seconds} seconds before paying...");
 		yield return new WaitForSeconds(seconds);
-		Debug.Log("[PassengerCarrier] Passenger is ready to pay fare.");
-		passenger.Pay();
+		passenger.Pay(debug);
+	}
+
+	/// <summary>
+	/// Checks if any passengers need to be dropped off as soon as possible.
+	/// </summary>
+	private void CheckPassengerDropOffs(bool debug = false) {
+		foreach (BoardedPassenger passenger in Passengers) {
+			bool toDropOff = transform.position.y > passenger.DropOffAtY;
+			bool missedStop = transform.position.y > passenger.DropOffAtY + DropOffWithin;
+
+			if (toDropOff) {
+				if (debug) Debug.Log($"[PassengerCarrier] Passenger {passenger} wants to be dropped off.");
+				RequestFullStop(passenger, debug);
+			}
+
+			if (missedStop) {
+				int penalty = (int) (FareManager.MissedStopPenalty * Time.deltaTime);
+				FareManager.TotalPenalty += penalty;
+				if (debug) Debug.Log($"[PassengerCarrier] Missed stop! Penalty: P{FareManager.TotalPenalty} +P{penalty}");
+			}
+		}
+	}
+
+	/// <summary>
+	/// Requests a full stop for the vehicle to drop off a passenger.
+	/// This removes the passenger from the vehicle and spawns them at the drop-off point.
+	/// It will also remove them from <see cref="Passengers"/>.
+	/// </summary>
+	/// <param name="passenger"></param>
+	/// <param name="debug"></param>
+	private void RequestFullStop(BoardedPassenger passenger, bool debug = false) {
+
+		bool atLeftmostLane = transform.position.x <= DropOffXLeft;
+		bool atRightmostLane = transform.position.x >= DropOffXRight;
+		bool isPulledOver = atLeftmostLane || atRightmostLane;
+
+		float dropOffX = 0;
+		if (atLeftmostLane) dropOffX = DropOffXLeft - DropOffXOffset;
+		else if (atRightmostLane) dropOffX = DropOffXRight + DropOffXOffset;
+
+		Vector2 dropOffTo = new(dropOffX, transform.position.y);
+
+		if (JeepM.Speed == 0 && isPulledOver) {
+			if (debug) Debug.Log($"[PassengerCarrier] Jeep stopped. Ejecting passenger {passenger}.");
+			EjectPassenger(passenger, dropOffTo, debug);
+		}
 	}
 
 	/// <summary>
 	/// Spawns the passenger prefab at the drop-off point and removes the passenger from the vehicle.
 	/// </summary>
 	/// <param name="passenger">The passenger to yeet.</param>
-	public void EjectPassenger(BoardedPassenger passenger, bool debug = false) {
+	public void EjectPassenger(BoardedPassenger passenger, Vector2 dropoffPoint, bool debug = false) {
 		RemovePassenger(passenger);
 
-		GameObject someDude = Instantiate(PassengerPrefab, EntranceLocation, Quaternion.Euler(0, 0, EjectAngle));
+		//TODO: Change prefab here?
+		GameObject someDude = Instantiate(PassengerPrefab, dropoffPoint, Quaternion.identity);
 
-		//TODO: Manually configure the passenger's destination here. Example:
-		//HumanMovement someDudeScript = someDude.GetComponent<HumanMovement>();
-		//someDudeScript.Destination = EntranceLocation;
+		//Remove passenger from seat --------------------------------------------
+		
+		//TODO: DO STUFF HERE ONLY PLS
+
+		//-----------------------------------------------------------------------
 
 		if (debug) Debug.Log($"[PassengerCarrier] Ejected passenger.");
 	}
@@ -114,6 +180,10 @@ public class PassengerCarrier : MonoBehaviour
 		if (FareManager == null) {
 			Debug.LogError("[PassengerCarrier] FareManager not found in the scene.");
 		}
+	}
+
+	private void Update() {
+		CheckPassengerDropOffs(true);
 	}
 
 	#endregion

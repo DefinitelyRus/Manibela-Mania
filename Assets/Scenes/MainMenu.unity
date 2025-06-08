@@ -3662,9 +3662,11 @@ MonoBehaviour:
   musicSourceB: {fileID: 725155790}
   menuMusicTracks:
   - {fileID: 8300000, guid: eb0559aac2f18af4eafb959582c63066, type: 3}
+  - {fileID: 8300000, guid: f3da36f778c217e4daf8a15ebeb068a3, type: 3}
   gameMusicTracks:
   - {fileID: 8300000, guid: 2cd940fa27605ab498c86bd04acbf9a0, type: 3}
   - {fileID: 8300000, guid: a97ab87d35aeec04dbd7b9874a5dcd59, type: 3}
+  - {fileID: 8300000, guid: 565f7ac2dea950848989576a53125bdf, type: 3}
   masterVolume: 1
   musicVolume: 1
   sfxVolume: 1

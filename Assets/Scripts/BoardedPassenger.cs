@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BoardedPassenger {
 
@@ -34,8 +35,12 @@ public class BoardedPassenger {
 	/// <summary>
 	/// Queues the passenger as the next one to pay their fare.
 	/// </summary>
-	public void Pay() {
-		FareManager.QueuePayment(this);
+	public void Pay(bool debug = false) {
+		if (debug) Debug.Log($"[BoardedPassenger] Paying fare: P{FareToPay} / P{FareOwed}");
+
+		FareManager.QueuePayment(this, debug);
+
+		ToDropOff = false;
 
 		//TODO: Enable their payment popup bubble here. Maybe SFX too.
 	}
@@ -47,14 +52,15 @@ public class BoardedPassenger {
 	/// <param name="debug">Whether to print logs to console.</param>
 	public void ReceiveChange(int change, bool debug = false) {
 		if (change >= ExpectedChange) {
-			if (debug) Debug.Log($"[Passenger] Completed change: P{change} / P{ExpectedChange}");
+			if (debug) Debug.Log($"[BoardedPassenger] Completed change: P{change} / P{ExpectedChange}. Fully paid and to drop off!");
 			FullyPaid = true;
+			ToDropOff = true;
 
 			return;
 		}
 
 		else {
-			if (debug) Debug.Log($"[Passenger] Insufficient change: P{change} / P{ExpectedChange}");
+			if (debug) Debug.Log($"[BoardedPassenger] Insufficient change: P{change} / P{ExpectedChange}");
 			FullyPaid = false;
 
 			ExpectedChange -= change;
@@ -65,44 +71,34 @@ public class BoardedPassenger {
 
 	#region Dropping Off
 
-	/// <summary>
-	/// Chance of the passenger dropping off at the next stop.
-	/// </summary>
 	[Header("Dropping Off")]
-	public int DropoffNextChance = 10;
+	public float DropOffAtY;
 
-	/// <summary>
-	/// Indicates whether the passenger will drop off at the next stop.
-	/// </summary>
-	public bool WillDropOffNext = false;
-
-	/// <summary>
-	/// Decides whether the passenger will drop off at the next stop based on a random chance.
-	/// </summary>
-	/// <param name="debug"></param>
-	public void DecideDropoff(bool debug = false) {
-		int rng = Random.Range(0, 100);
-
-		if (rng > DropoffNextChance) {
-			WillDropOffNext = true;
-			
-			if (debug) Debug.Log($"[Passenger] Passenger will drop off at next stop.");
-		}
-	}
+	public bool ToDropOff = false;
 
 	#endregion
 
-	public BoardedPassenger(FareManager fareManager) {
-		FareManager = fareManager;
+	public BoardedPassenger(FareManager fareManager, PassengerCarrier carrier, bool debug = false) {
 
-		if (FareManager == null) {
-			Debug.LogError("[Passenger] FareManager not found in the scene.");
-
+		if (fareManager == null) {
+			Debug.LogError("[BoardedPassenger] Given FareManager is null.");
 			return;
 		}
 
+		if (carrier == null) {
+			Debug.LogError("[BoardedPassenger] Given PassengerCarrier is null.");
+			return;
+		}
+
+		FareManager = fareManager;
+
 		FareOwed = Random.Range(FareManager.MinimumFare, FareManager.MaximumFare + 1);
-		FareToPay = Random.Range(FareManager.MinimumPay, FareManager.MaximumPay + 1);
+		FareToPay = Random.Range(FareOwed, FareManager.MaximumPay + 1);
 		FairToPayInCash = FareManager.RoundToCoins(FareManager.RoundToBill(FareToPay));
+
+		float dropOffDistance = Random.Range(carrier.DropOffDistanceMin, carrier.DropOffDistanceMax);
+		DropOffAtY = carrier.transform.position.y + dropOffDistance;
+
+		if (debug) Debug.Log($"[BoardedPassenger] Created passenger to drop off at Y: {DropOffAtY}.");
 	}
 }
