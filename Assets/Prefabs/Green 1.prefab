@@ -58,8 +58,8 @@ Transform:
   m_GameObject: {fileID: 1726236438807649196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.9, y: 29.1, z: 0}
-  m_LocalScale: {x: 0.47499, y: 0.40828124, z: 1}
+  m_LocalPosition: {x: -1.75, y: 0.87391, z: 0}
+  m_LocalScale: {x: 0.01465001, y: 0.012592525, z: 0.030842772}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1186178686768879589}
@@ -151,7 +151,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2938458821169997062}
   m_Enabled: 1
-  m_CellSize: {x: 32, y: 32, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -572,7 +572,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 15.5, y: 15.5, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -605,8 +605,8 @@ Transform:
   m_GameObject: {fileID: 8468481399669154117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -132.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.084899, y: -0.023448, z: 0}
+  m_LocalScale: {x: 0.030842772, y: 0.030842772, z: 0.030842772}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1186178686768879589}
@@ -683,8 +683,8 @@ Transform:
   m_GameObject: {fileID: 9218829876437520297}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0050510764, y: -0.023448, z: 0}
+  m_LocalScale: {x: 0.030842772, y: 0.030842772, z: 0.030842772}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1186178686768879589}
