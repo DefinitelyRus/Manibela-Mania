@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5257879637505517108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Black2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6601353093242150376}
   - component: {fileID: 4308074509927699419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1186178686768879589}
   - component: {fileID: 5788688990179395833}
   - component: {fileID: 6860451068412285786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86838803171336257}
   - component: {fileID: 3683574055156614617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4163344920445450606}
   - component: {fileID: 5901814091343226261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111312186108263630}
   - component: {fileID: 7447296122565159768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

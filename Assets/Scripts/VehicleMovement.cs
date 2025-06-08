@@ -141,7 +141,7 @@ public class VehicleMovement : MonoBehaviour {
 	/// </summary>
 	/// <param name="shiftTo">Move up or down to a specific gear.</param>
 	/// <param name="debug">Whether to print logs to console.</param>
-	private void ChangeGear(int shiftTo, bool debug = false) {
+	public void ChangeGear(int shiftTo, bool debug = false) {
 		if (shiftTo < -1 || shiftTo > 3) {
 			Debug.LogError($"[PlayerMovement] Invalid gear change. Attempting to shift to gear {shiftTo}.");
 			return;
@@ -205,7 +205,7 @@ public class VehicleMovement : MonoBehaviour {
 	/// </summary>
 	/// <param name="shiftBy">Move up or down by this many gears.</param>
 	/// <param name="debug">Whether to print logs to console.</param>
-	private void ShiftGear(int shiftBy, bool debug = false) {
+	public void ShiftGear(int shiftBy, bool debug = false) {
 		ChangeGear(CurrentGear + shiftBy, debug);
 	}
 
@@ -213,37 +213,42 @@ public class VehicleMovement : MonoBehaviour {
 	/// Automatically shifts gears based on the current speed and input.
 	/// </summary>
 	/// <param name="useAutoShift"></param>
-	private void AutoShift(bool useAutoShift = false) {
+	private void AutoShift(bool useAutoShift = false, bool debug = false) {
 		if (!useAutoShift) return;
 
-		//2 -> 3
-		if (Speed > Gear2Speed * AutoShiftUpThreshold && CurrentGear < 3) {
-			ChangeGear(3, true);
+		bool isStopping = CurrentGear > 0 && Mathf.Abs(Speed) < 500 && !Input.IsAccelerating;
+		bool acceleratingAtStop = CurrentGear == 0 && Input.IsAccelerating;
+		bool toGear1Up = Speed < Gear1Speed * AutoShiftDownThreshold;
+		bool inGear1Range = toGear1Up && Mathf.Abs(Speed) > 500;
+
+		bool toGear2Up = Speed > Gear1Speed * AutoShiftUpThreshold;
+		bool toGear2Down = Speed < Gear2Speed * AutoShiftDownThreshold;
+		bool inGear2Range = toGear2Up && toGear2Down;
+
+		bool toGear3Up = Speed > Gear2Speed * AutoShiftUpThreshold;
+		bool toGear3Down = Speed < Gear3Speed * AutoShiftDownThreshold;
+		bool inGear3Range = toGear3Up && toGear3Down;
+
+		if (isStopping) {
+			ChangeGear(0, debug);
+			return;
 		}
 
-		//1 -> 2
-		else if (Speed > Gear1Speed * AutoShiftUpThreshold && CurrentGear < 2) {
-			ChangeGear(2, true);
+		if (inGear1Range || acceleratingAtStop) {
+			ChangeGear(1, debug);
+			return;
 		}
 
-		//0 -> 1
-		else if (Mathf.Abs(Speed) < 10 && CurrentGear == 0 && Input.IsAccelerating) {
-			ChangeGear(1, true);
+		//Gear 2
+		if (inGear2Range) {
+			ChangeGear(2, debug);
+			return;
 		}
 
-		//3 -> 2
-		else if (Speed < Gear3Speed * AutoShiftDownThreshold && CurrentGear > 2) {
-			ChangeGear(2, true);
-		}
-
-		//2 -> 1
-		else if (Speed < Gear2Speed * AutoShiftDownThreshold && CurrentGear > 1) {
-			ChangeGear(1, true);
-		}
-
-		//1 -> 0
-		else if (Speed < Gear1Speed * AutoShiftDownThreshold && CurrentGear > 0) {
-			ChangeGear(0, true);
+		//Gear 3
+		if (inGear3Range) {
+			ChangeGear(3, debug);
+			return;
 		}
 	}
 
@@ -453,7 +458,7 @@ public class VehicleMovement : MonoBehaviour {
 
 	#endregion
 
-	#region 
+	#region Camera Shake & Collision
 
 	/// <summary>
 	/// Handles camera shake and collision effects when the vehicle collides with something.
@@ -472,7 +477,10 @@ public class VehicleMovement : MonoBehaviour {
 	public float CollisionSpeedReduction = 0.5f;
 
 	private void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.relativeVelocity.magnitude > 3f) Camera.TriggerShake();
+
+		bool cameraExists = Camera != null;
+		bool significantCollision = collision.relativeVelocity.magnitude > 3f;
+		if (cameraExists && significantCollision) Camera.TriggerShake();
 
 		Speed *= CollisionSpeedReduction;
 	}
