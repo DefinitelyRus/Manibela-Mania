@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 485c36e52c173c443bbf23d745a5ff04
+guid: e34c1b0ce86abe54a824bd39e4beafac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5021470606174065258
-    second: SPRITE_1 1_0
+      213: 7170821175653429175
+    second: SPRITE_5_0
   - first:
-      213: -1919438456496725509
-    second: SPRITE_1 1_1
+      213: 195312595701205768
+    second: SPRITE_5_1
   - first:
-      213: -6547559378166314088
-    second: SPRITE_1 1_2
+      213: 303660140426102002
+    second: SPRITE_5_2
   - first:
-      213: 3043444017843766148
-    second: SPRITE_1 1_3
+      213: -9161555124978704282
+    second: SPRITE_5_3
   - first:
-      213: -1721036704729162512
-    second: SPRITE_1 1_4
+      213: 8842779954786397817
+    second: SPRITE_5_4
   - first:
-      213: 4928733457866427765
-    second: SPRITE_1 1_5
+      213: 4011864198500114270
+    second: SPRITE_5_5
   - first:
-      213: 4976472670059944489
-    second: SPRITE_1 1_6
+      213: -1454761915620755847
+    second: SPRITE_5_6
   - first:
-      213: -1169826092475136608
-    second: SPRITE_1 1_7
+      213: -6199685737724711495
+    second: SPRITE_5_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,9 +96,9 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPRITE_1 1_0
+      name: SPRITE_5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69dedeca617205ab0800000000000000
-      internalID: -5021470606174065258
+      spriteID: 7bfebaadddfd38360800000000000000
+      internalID: 7170821175653429175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_1
+      name: SPRITE_5_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf1e948b4e8cc55e0800000000000000
-      internalID: -1919438456496725509
+      spriteID: 80b0eee55c3e5b200800000000000000
+      internalID: 195312595701205768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_2
+      name: SPRITE_5_2
       rect:
         serializedVersion: 2
         x: 0
@@ -180,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89b8e9e9f656225a0800000000000000
-      internalID: -6547559378166314088
+      spriteID: 2f40b82f941d63400800000000000000
+      internalID: 303660140426102002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_3
+      name: SPRITE_5_3
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4838d59953c7c3a20800000000000000
-      internalID: 3043444017843766148
+      spriteID: 6602c71672e9bd080800000000000000
+      internalID: -9161555124978704282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_4
+      name: SPRITE_5_4
       rect:
         serializedVersion: 2
         x: 0
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fc95394c36ad18e0800000000000000
-      internalID: -1721036704729162512
+      spriteID: 97eecff848dd7ba70800000000000000
+      internalID: 8842779954786397817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_5
+      name: SPRITE_5_5
       rect:
         serializedVersion: 2
         x: 0
@@ -246,19 +246,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57d06b467f0666440800000000000000
-      internalID: 4928733457866427765
+      spriteID: e5fd4b69b310da730800000000000000
+      internalID: 4011864198500114270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_6
+      name: SPRITE_5_6
       rect:
         serializedVersion: 2
         x: 0
         y: 31
-        width: 16
+        width: 15
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -268,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92adc55e68bff0540800000000000000
-      internalID: 4976472670059944489
+      spriteID: 97678a2deb5afcbe0800000000000000
+      internalID: -1454761915620755847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITE_1 1_7
+      name: SPRITE_5_7
       rect:
         serializedVersion: 2
         x: 0
@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a5490ded51f3cfe0800000000000000
-      internalID: -1169826092475136608
+      spriteID: 9bdecdb3baa46f9a0800000000000000
+      internalID: -6199685737724711495
       vertices: []
       indices: 
       edges: []
@@ -310,14 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SPRITE_1 1_0: -5021470606174065258
-      SPRITE_1 1_1: -1919438456496725509
-      SPRITE_1 1_2: -6547559378166314088
-      SPRITE_1 1_3: 3043444017843766148
-      SPRITE_1 1_4: -1721036704729162512
-      SPRITE_1 1_5: 4928733457866427765
-      SPRITE_1 1_6: 4976472670059944489
-      SPRITE_1 1_7: -1169826092475136608
+      SPRITE_5_0: 7170821175653429175
+      SPRITE_5_1: 195312595701205768
+      SPRITE_5_2: 303660140426102002
+      SPRITE_5_3: -9161555124978704282
+      SPRITE_5_4: 8842779954786397817
+      SPRITE_5_5: 4011864198500114270
+      SPRITE_5_6: -1454761915620755847
+      SPRITE_5_7: -6199685737724711495
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,6 +8,7 @@ public class PassengerSeating : MonoBehaviour
         public string seatName;             // Optional for debug
         public SpriteRenderer seatRenderer; // The visual part to change sprite
         public bool occupied = false;       // Is seat taken?
+        public string currentPassenger;     // Track which passenger is in this seat
     }
 
     public Seat[] seats = new Seat[6]; // Array for 6 seats in order
@@ -16,6 +17,8 @@ public class PassengerSeating : MonoBehaviour
     public Sprite Char2Sit;
     public Sprite Char3Sit;
     public Sprite Char4Sit;
+    public Sprite Char5Sit;
+    public Sprite Char6Sit;
 
     // NEW: Reference to the Animator on the "RearAnim" GameObject
     public Animator RearAnimAnimator;
@@ -31,58 +34,114 @@ public class PassengerSeating : MonoBehaviour
         }
 
         Instance = this;
+        ValidateSeats();
+    }
+
+    private void ValidateSeats()
+    {
+        if (seats == null || seats.Length != 6)
+        {
+            Debug.LogError("PassengerSeating must have exactly 6 seats configured!");
+            return;
+        }
+
+        for (int i = 0; i < seats.Length; i++)
+        {
+            if (seats[i] == null)
+            {
+                Debug.LogError($"Seat {i} is null! Please configure all seats in the Inspector.");
+                continue;
+            }
+
+            if (seats[i].seatRenderer == null)
+            {
+                Debug.LogError($"Seat {i} ({seats[i].seatName}) is missing its SpriteRenderer!");
+            }
+        }
     }
 
     /// <summary>
     /// Call this from Sakay.cs when a character is picked up.
     /// </summary>
-    /// <param name="characterName">"Char1", "Char2", "Char3", or "Char4"</param>
+    /// <param name="characterName">"Char1", "Char2", "Char3", etc.</param>
     public void AssignPassengerToSeat(string characterName)
     {
-        Sprite selectedSprite = GetSeatedSprite(characterName);
-
-        if (selectedSprite == null)
+        if (string.IsNullOrEmpty(characterName))
         {
-            Debug.LogWarning($"No seated sprite found for {characterName}");
+            Debug.LogError("Cannot assign null or empty character name to seat!");
             return;
         }
 
-        // Flag to track if a seat was found and assigned (no longer strictly needed for this logic, but kept for clarity)
-        // bool seatAssigned = false; // Original purpose was to trigger 'no seats available' logic.
+        Sprite selectedSprite = GetSeatedSprite(characterName);
+        if (selectedSprite == null)
+        {
+            Debug.LogError($"No seated sprite found for {characterName}");
+            return;
+        }
 
+        // Find first available seat
         for (int i = 0; i < seats.Length; i++)
         {
             Seat seat = seats[i];
+            if (seat == null)
+            {
+                Debug.LogError($"Seat {i} is null!");
+                continue;
+            }
 
             if (!seat.occupied)
             {
+                // Assign the passenger to the seat
                 seat.seatRenderer.sprite = selectedSprite;
                 seat.occupied = true;
-                // seatAssigned = true; // Original purpose was to trigger 'no seats available' logic.
+                seat.currentPassenger = characterName;
 
-                // Removed flipping behavior
                 Debug.Log($"{characterName} seated at {seat.seatName}");
 
-                // MOVED: Play the animator on RearAnim if it's assigned and a sprite was successfully selected
-                // This code now runs ONLY when a seat is successfully assigned.
+                // Play the animation
                 if (RearAnimAnimator != null)
                 {
-                    // Using SetTrigger with a parameter named "PassengerSeated"
                     RearAnimAnimator.SetTrigger("PassengerSeated");
-                    Debug.Log("RearAnim animation triggered because a passenger was successfully seated.");
+                    Debug.Log("RearAnim animation triggered for passenger seating.");
                 }
                 else
                 {
                     Debug.LogWarning("RearAnimAnimator is not assigned. Cannot trigger animation.");
                 }
 
-                return; // Exit the method after assigning a seat and triggering animation
+                return;
             }
         }
 
-        // If the loop finishes and no seat was found, it means there were no available seats.
-        // The animation trigger for "no seats" is now removed from here as per your request.
-        Debug.LogWarning("No available seats to assign passenger.");
+        Debug.LogError($"No available seats found for {characterName}! All seats are occupied.");
+    }
+
+    /// <summary>
+    /// Call this when a passenger is dropped off to clear their seat.
+    /// </summary>
+    /// <param name="characterName">The character being dropped off</param>
+    public void ClearSeat(string characterName)
+    {
+        if (string.IsNullOrEmpty(characterName))
+        {
+            Debug.LogError("Cannot clear seat for null or empty character name!");
+            return;
+        }
+
+        for (int i = 0; i < seats.Length; i++)
+        {
+            Seat seat = seats[i];
+            if (seat != null && seat.currentPassenger == characterName)
+            {
+                seat.seatRenderer.sprite = null;
+                seat.occupied = false;
+                seat.currentPassenger = null;
+                Debug.Log($"Cleared seat {seat.seatName} for {characterName}");
+                return;
+            }
+        }
+
+        Debug.LogWarning($"No seat found to clear for {characterName}");
     }
 
     private Sprite GetSeatedSprite(string characterName)
@@ -97,7 +156,12 @@ public class PassengerSeating : MonoBehaviour
                 return Char3Sit;
             case "Char4":
                 return Char4Sit;
+            case "Char5":
+                return Char5Sit;
+            case "Char6":
+                return Char6Sit;
             default:
+                Debug.LogError($"Unknown character type: {characterName}");
                 return null;
         }
     }
