@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +48,7 @@ public class DropOffZone : MonoBehaviour
                                !inputManager.IsHandBraking && 
                                Mathf.Approximately(inputManager.Steering, 0f);
 
-                Debug.Log($"Vehicle speed: {vehicleMovement.Speed}, IsStopped: {isStopped}");
+                //Debug.Log($"Vehicle speed: {vehicleMovement.Speed}, IsStopped: {isStopped}");
 
                 if (isStopped)
                 {
@@ -90,7 +90,10 @@ public class DropOffZone : MonoBehaviour
                     if (passengerTimers[passenger.Key] >= dropOffTimer)
                     {
                         DropOffPassenger(passenger.Key);
-                    }
+
+						GameObject.Find("Jeep").TryGetComponent<PassengerCarrier>(out var carrier);
+						carrier.RemovePassenger(carrier.Passengers[0]);
+					}
                 }
                 else
                 {
@@ -105,10 +108,31 @@ public class DropOffZone : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Passenger {passenger.Key} needs {remainingAreas} more areas to reach destination");
+                //Debug.Log($"Passenger {passenger.Key} needs {remainingAreas} more areas to reach destination");
             }
         }
     }
+
+	GameObject Jeep;
+	public float LeftEdge = 71f;
+	public float RightEdge = 72f;
+
+	private void RequestPullOver() {
+		Jeep = GameObject.Find("Jeep");
+		VehicleMovement jeepMovement = Jeep.GetComponent<VehicleMovement>();
+		Transform jeepTransform = Jeep.transform;
+		bool isAtEdge = jeepTransform.position.x <= LeftEdge || jeepTransform.position.x >= RightEdge;
+
+		if (jeepMovement == null || jeepTransform == null) {
+			Debug.LogError("Jeep movement or transform is not found!");
+			return;
+		}
+
+		
+		if (jeepMovement.Speed == 0 && isAtEdge) {
+
+		}
+	}
 
     private void CreateTimerBar(string passengerKey)
     {

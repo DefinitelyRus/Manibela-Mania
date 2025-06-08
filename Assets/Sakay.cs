@@ -133,11 +133,11 @@ public class Sakay : MonoBehaviour
             int remainingAreas = passenger.Value - currentArea;
             if (remainingAreas <= 0)
             {
-                Debug.Log($"Passenger {passenger.Key} has reached their destination. They can get off at any drop-off zone.");
+                //Debug.Log($"Passenger {passenger.Key} has reached their destination. They can get off at any drop-off zone.");
             }
             else
             {
-                Debug.Log($"Passenger {passenger.Key} needs {remainingAreas} more areas to reach destination. They can get off at any drop-off zone after that.");
+                //Debug.Log($"Passenger {passenger.Key} needs {remainingAreas} more areas to reach destination. They can get off at any drop-off zone after that.");
             }
         }
     }

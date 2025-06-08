@@ -40,7 +40,7 @@ public class PassengerCarrier : MonoBehaviour
 	/// </summary>
 	public float EjectAngle = 180f;
 
-	public List<BoardedPassenger> Passengers { get; private set; } = new();
+	public List<BoardedPassenger> Passengers = new();
 
 	/// <summary>
 	/// Adds a passenger to the carrier if there is space.
