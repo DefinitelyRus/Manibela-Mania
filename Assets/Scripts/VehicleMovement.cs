@@ -213,37 +213,41 @@ public class VehicleMovement : MonoBehaviour {
 	/// Automatically shifts gears based on the current speed and input.
 	/// </summary>
 	/// <param name="useAutoShift"></param>
-	private void AutoShift(bool useAutoShift = false) {
+	private void AutoShift(bool useAutoShift = false, bool debug = false) {
 		if (!useAutoShift) return;
 
-		//2 -> 3
-		if (Speed > Gear2Speed * AutoShiftUpThreshold && CurrentGear < 3) {
-			ChangeGear(3, true);
+		bool isStopping = CurrentGear > 0 && Mathf.Abs(Speed) < 500 && !Input.IsAccelerating;
+		bool acceleratingAtStop = CurrentGear == 0 && Input.IsAccelerating;
+		bool inGear1Range = Mathf.Abs(Speed) > 500 && Speed < Gear1Speed * AutoShiftDownThreshold;
+
+		bool toGear2Up = Speed > Gear1Speed * AutoShiftUpThreshold;
+		bool toGear2Down = Speed < Gear2Speed * AutoShiftDownThreshold;
+		bool inGear2Range = toGear2Up && toGear2Down;
+
+		bool toGear3Up = Speed > Gear2Speed * AutoShiftUpThreshold;
+		bool toGear3Down = Speed < Gear3Speed * AutoShiftDownThreshold;
+		bool inGear3Range = toGear3Up && toGear3Down;
+
+		if (isStopping) {
+			ChangeGear(0, debug);
+			return;
 		}
 
-		//1 -> 2
-		else if (Speed > Gear1Speed * AutoShiftUpThreshold && CurrentGear < 2) {
-			ChangeGear(2, true);
+		if (inGear1Range || acceleratingAtStop) {
+			ChangeGear(1, debug);
+			return;
 		}
 
-		//0 -> 1
-		else if (Mathf.Abs(Speed) < 10 && CurrentGear == 0 && Input.IsAccelerating) {
-			ChangeGear(1, true);
+		//Gear 2
+		if (inGear2Range) {
+			ChangeGear(2, debug);
+			return;
 		}
 
-		//3 -> 2
-		else if (Speed < Gear3Speed * AutoShiftDownThreshold && CurrentGear > 2) {
-			ChangeGear(2, true);
-		}
-
-		//2 -> 1
-		else if (Speed < Gear2Speed * AutoShiftDownThreshold && CurrentGear > 1) {
-			ChangeGear(1, true);
-		}
-
-		//1 -> 0
-		else if (Speed < Gear1Speed * AutoShiftDownThreshold && CurrentGear > 0) {
-			ChangeGear(0, true);
+		//Gear 3
+		if (inGear3Range) {
+			ChangeGear(3, debug);
+			return;
 		}
 	}
 
@@ -453,7 +457,7 @@ public class VehicleMovement : MonoBehaviour {
 
 	#endregion
 
-	#region 
+	#region Camera Shake & Collision
 
 	/// <summary>
 	/// Handles camera shake and collision effects when the vehicle collides with something.
