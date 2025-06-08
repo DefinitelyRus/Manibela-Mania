@@ -438,8 +438,11 @@ public class VehicleMovement : MonoBehaviour {
 	/// Not to be confused see <see cref="SteerPhysics"/>, which is called in <see cref="FixedUpdate"/>.
 	/// </summary>
 	public void Steer() {
-		TargetAngle = Mathf.LerpAngle(0, SteeringSensitivity * Mathf.Sign(Input.Steering), Mathf.Abs(Input.Steering));
+		if (TargetAngle == 0 && Speed < Gear1Speed * 0.15f) {
+			return;
+		}
 
+		TargetAngle = Mathf.LerpAngle(0, SteeringSensitivity * Mathf.Sign(Input.Steering), Mathf.Abs(Input.Steering));
 	}
 
 	/// <summary>
@@ -453,7 +456,6 @@ public class VehicleMovement : MonoBehaviour {
 		float newAngle = Mathf.LerpAngle(currentAngle, TargetAngle, Time.fixedDeltaTime * SteerSpeed);
 
 		transform.rotation = Quaternion.Euler(0, 0, newAngle);
-
 	}
 
 	#endregion
