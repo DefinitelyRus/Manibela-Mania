@@ -33,16 +33,20 @@ public class ButtonSpriteChanger : MonoBehaviour, IPointerDownHandler, IPointerU
             buttonText.anchoredPosition = originalTextPosition + new Vector2(0, pressOffset);
         }
     }
+public void OnPointerUp(PointerEventData eventData)
+{
+    buttonImage.sprite = defaultSprite;
 
-    public void OnPointerUp(PointerEventData eventData)
+    if (buttonText != null)
     {
-        buttonImage.sprite = defaultSprite;
-
-        if (buttonText != null)
-        {
-            buttonText.anchoredPosition = originalTextPosition;
-        }
-
-        SceneManager.LoadScene(sceneToLoad);
+        buttonText.anchoredPosition = originalTextPosition;
     }
+
+    // 🔥 STOP music playback BEFORE transitioning
+    if (SoundManager.Instance != null)
+        SoundManager.Instance.StopMusic();
+
+    SceneManager.LoadScene(sceneToLoad);
+}
+
 }

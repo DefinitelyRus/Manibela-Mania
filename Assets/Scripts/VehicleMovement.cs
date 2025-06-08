@@ -17,11 +17,11 @@ public class VehicleMovement : MonoBehaviour {
 	[SerializeField]private SoundData[] gearSounds = new SoundData[3];
 	[SerializeField] private SoundData brakeSound;
 	[SerializeField] private SoundData crashSound;
-	[SerializeField]private AudioSource engineSource;
-
+	[SerializeField]public  AudioSource engineSource;
+	[SerializeField] public  AudioSource sfxSource;
 	[SerializeField] private SoundData gearShiftSound;
 	
-	[SerializeField] private AudioSource sfxSource;
+
 	private int previousGear;
 
 	public CameraHandler camHandler;
@@ -450,7 +450,7 @@ public class VehicleMovement : MonoBehaviour {
 		if (isBraking && brakeCooldown <= 0f)
 		{
 			PlayOneShotSound(brakeSound);
-			brakeCooldown = 0.5f; // Prevent spam
+			brakeCooldown = 1f; // Prevent spam
 		}
 
 		brakeCooldown -= Time.deltaTime;
@@ -498,10 +498,17 @@ public class VehicleMovement : MonoBehaviour {
 
 	#region Unity Callbacks
 
-	private void PlaySoundData(SoundData data)
+	public void PlaySoundData(SoundData data)
 {
+     if (data == null || data.clip == null) return;
+
     engineSource.clip = data.clip;
-    engineSource.volume = data.volume;
+
+    float userVolume = SoundManager.Instance != null 
+        ? SoundManager.Instance.GetEffectiveSFXVolume() 
+        : 1f;
+
+    engineSource.volume = data.volume * userVolume;
     engineSource.pitch = data.pitch;
     engineSource.loop = true;
     engineSource.Play();
@@ -547,7 +554,7 @@ private float pitchOverrideValue = 1f;
 }
 
 
-
+	//Audio fluctuations when downshifting
 	private IEnumerator TemporarilyLowerEnginePitch()
 	{
 		engineSource.pitch = 0.8f;
@@ -560,6 +567,13 @@ private float pitchOverrideValue = 1f;
 	{
 		previousGear = CurrentGear;
 		lastSpeed = Speed;
+
+		if (SoundManager.Instance != null)
+		{
+			SoundManager.Instance.RegisterExtraSFXSource(engineSource);
+			
+		}
+		
 
 	}
 	
@@ -615,6 +629,8 @@ private float pitchOverrideValue = 1f;
 		AutoShift(UseAutoShift);
 
 		UpdateTachometer();
+
+		//Audio updates
 		UpdateBrakingSound();
 		UpdateEngineSound();
 	}
