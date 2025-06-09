@@ -51,24 +51,12 @@ public class Sakay : MonoBehaviour
 		TimerSlider.value = Timer / TimerDuration;
 
 		if (Timer >= TimerDuration) {
-			// Check if this character is already seated
-			if (PassengerSeating.Instance != null) {
-				foreach (PassengerSeating.Seat seat in PassengerSeating.Instance.seats) {
-					if (seat.occupied && seat.currentPassenger == characterName) {
-						Debug.LogWarning($"[Sakay] Cannot pick up {characterName} - already seated!");
-						Timer = 0f;
-						TimerSlider.value = 0f;
-						TimerBar.SetActive(false);
-						return;
-					}
-				}
-			}
-
 			Debug.Log($"[Sakay] Boarding passenger.");
 			GlobalCounter.Increment(characterName);
 			GlobalCounter.passengernum += 1;
 
 			//Assign the passenger to a seat
+			//TODO: Treat all seats as generic; do not lock to a specific character.
 			if (PassengerSeating.Instance != null) PassengerSeating.Instance.AssignPassengerToSeat(characterName);
 			else Debug.LogError("PassengerSeating.Instance is null! Make sure there is a PassengerSeating component in the scene.");
 

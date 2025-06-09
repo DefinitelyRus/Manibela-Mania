@@ -1279,6 +1279,8 @@ MonoBehaviour:
   - {fileID: 1395912337556370022, guid: 213c4c0c5826b744cbb66e28e27ccea8, type: 3}
   - {fileID: 1395912337556370022, guid: 982ce4a3e76c3bc49a3570c3bb9e7dd7, type: 3}
   - {fileID: 1395912337556370022, guid: d049d08351788a643afe69b3ce63b2eb, type: 3}
+  - {fileID: 1395912337556370022, guid: f74baabdce1210645802141576b2e2a5, type: 3}
+  - {fileID: 1395912337556370022, guid: 72b881ba1455a6248ad9ab17e123a133, type: 3}
   player: {fileID: 775778072}
   spawnDistanceAhead: 50
   despawnDistance: 50
@@ -2402,7 +2404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a650eb52a142314fb362977bdb5a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinValue: 10
+  CashValue: 10
   FareManager: {fileID: 1804445000}
   Collider: {fileID: 749173659}
   InputManager: {fileID: 18095529}
@@ -2620,7 +2622,6 @@ MonoBehaviour:
   FareManager: {fileID: 1804445000}
   PassengerPrefab: {fileID: 6132392952324034069, guid: e6f73fc4b0da4474a8836e54d6a9507f, type: 3}
   JeepM: {fileID: 775778071}
-  PassengerSeating: {fileID: 0}
   MaximumPassengers: 6
   EntranceLocation: {x: 0, y: -1}
   MinPayWait: 3
@@ -4463,7 +4464,7 @@ Transform:
   m_GameObject: {fileID: 1484821971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.563, y: -0.46310157, z: 0.21390373}
+  m_LocalPosition: {x: 1.6299464, y: -0.46310157, z: 0.21390373}
   m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4527,7 +4528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a650eb52a142314fb362977bdb5a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinValue: 1
+  CashValue: 1
   FareManager: {fileID: 1804445000}
   Collider: {fileID: 1484821973}
   InputManager: {fileID: 18095529}
@@ -5818,7 +5819,7 @@ Transform:
   m_GameObject: {fileID: 1939492359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.024, y: -0.46310157, z: 0.21390373}
+  m_LocalPosition: {x: 3.0673795, y: -0.46310157, z: 0.21390373}
   m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5882,7 +5883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a650eb52a142314fb362977bdb5a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinValue: 20
+  CashValue: 20
   FareManager: {fileID: 1804445000}
   Collider: {fileID: 1939492361}
   InputManager: {fileID: 18095529}
@@ -6350,7 +6351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a650eb52a142314fb362977bdb5a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinValue: 5
+  CashValue: 5
   FareManager: {fileID: 1804445000}
   Collider: {fileID: 2016452615}
   InputManager: {fileID: 18095529}

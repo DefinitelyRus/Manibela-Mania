@@ -18,6 +18,16 @@ public class BoardedPassenger {
 	public int FareToPay = 0;
 
 	/// <summary>
+	/// The denominations of coins that the passenger has paid in cash.
+	/// </summary>
+	public int[] FairToPayInCash;
+
+	/// <summary>
+	/// The change that the passenger expects to receive.
+	/// </summary>
+	public int ExpectedChange = 0;
+
+	/// <summary>
 	/// Indicates whether the passenger has fully paid their fare.
 	/// </summary>
 	public bool FullyPaid = false;
@@ -35,6 +45,28 @@ public class BoardedPassenger {
 		//TODO: Enable their payment popup bubble here. Maybe SFX too.
 	}
 
+	/// <summary>
+	/// Receives a change from the player.
+	/// </summary>
+	/// <param name="change">How much change to receive.</param>
+	/// <param name="debug">Whether to print logs to console.</param>
+	public void ReceiveChange(int change, bool debug = false) {
+		if (change >= ExpectedChange) {
+			if (debug) Debug.Log($"[BoardedPassenger] Completed change: P{change} / P{ExpectedChange}. Fully paid and to drop off!");
+			FullyPaid = true;
+			ToDropOff = true;
+
+			return;
+		}
+
+		else {
+			if (debug) Debug.Log($"[BoardedPassenger] Insufficient change: P{change} / P{ExpectedChange}");
+			FullyPaid = false;
+
+			ExpectedChange -= change;
+		}
+	}
+
 	#endregion
 
 	#region Dropping Off
@@ -45,9 +77,6 @@ public class BoardedPassenger {
 	public bool ToDropOff = false;
 
 	#endregion
-
-	// The coin options that will be shown above the passenger's head
-	public int[] CoinOptions = new int[4];
 
 	public BoardedPassenger(FareManager fareManager, PassengerCarrier carrier, bool debug = false) {
 
@@ -63,19 +92,9 @@ public class BoardedPassenger {
 
 		FareManager = fareManager;
 
-		// Generate a random fare between 1-20
-		FareOwed = Random.Range(1, 21);
-		
-		// Generate 4 random coin options for the passenger to choose from
-		for (int i = 0; i < 4; i++) {
-			CoinOptions[i] = FareManager.Denominations[Random.Range(0, FareManager.Denominations.Length)];
-		}
-
-		// Set the fare to pay as the sum of the coin options
-		FareToPay = 0;
-		foreach (int coin in CoinOptions) {
-			FareToPay += coin;
-		}
+		FareOwed = Random.Range(FareManager.MinimumFare, FareManager.MaximumFare + 1);
+		FareToPay = Random.Range(FareOwed, FareManager.MaximumPay + 1);
+		FairToPayInCash = FareManager.RoundToCoins(FareManager.RoundToBill(FareToPay));
 
 		float dropOffDistance = Random.Range(carrier.DropOffDistanceMin, carrier.DropOffDistanceMax);
 		DropOffAtY = carrier.transform.position.y + dropOffDistance;
