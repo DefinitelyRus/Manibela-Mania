@@ -124,6 +124,7 @@ public class VehicleMovement : MonoBehaviour {
 	/// </summary>
 	public float Tachometer = 0f;
 
+	
 	/// <summary>
 	/// Updates the tachometer based on the current speed and gear.
 	/// </summary>
