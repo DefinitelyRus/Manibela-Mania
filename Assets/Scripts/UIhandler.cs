@@ -35,6 +35,11 @@ public class UIhandler : MonoBehaviour
             toggleTarget.sprite = openedSprite;
     }
 
+    public void ClosePanel()
+    {
+        ControlsPanel.SetActive(false);
+    }
+
     public void OnExit()
     {
         SettingsUI.SetActive(false);
