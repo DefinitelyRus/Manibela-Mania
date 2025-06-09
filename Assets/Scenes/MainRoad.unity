@@ -4964,14 +4964,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55ce0697ab93044d9797be5e5f9b3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 775778071}
   gearImage: {fileID: 1690811633}
-  gearSprites:
+  manualSprites:
   - {fileID: -4205777149531076205, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
   - {fileID: -2407746543583422144, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
   - {fileID: 4662534707485085001, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
   - {fileID: -4987224101135004775, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
   - {fileID: -2801630629904968666, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
-  car: {fileID: 775778071}
+  autoSprites:
+  - {fileID: 1516974032654996405, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
+  - {fileID: -5525947334725027527, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
+  - {fileID: -5412072271128315531, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
+  - {fileID: 6430387925797025055, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
+  - {fileID: 5564688934880966421, guid: abe22e0a85d25884a951555a8434c0df, type: 3}
 --- !u!114 &1690811633
 MonoBehaviour:
   m_ObjectHideFlags: 0

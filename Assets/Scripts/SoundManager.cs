@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -25,8 +25,6 @@ public class SoundManager : MonoBehaviour
     [Range(0f, 1f)] public float masterVolume = 1f;
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
-
-    private bool isInMenu = true;
 
 
 
@@ -110,7 +108,6 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayMenuMusic()
     {
-        isInMenu = true;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(menuMusicTracks));
     }
@@ -124,14 +121,12 @@ public class SoundManager : MonoBehaviour
     }
     public void SwitchToGameMusic()
     {
-        isInMenu = false;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(gameMusicTracks));
     }
 
     public void SwitchToMenuMusic()
     {
-        isInMenu = true;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(menuMusicTracks));
     }

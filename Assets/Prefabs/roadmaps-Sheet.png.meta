@@ -1,0 +1,1703 @@
+fileFormatVersion: 2
+guid: 9e3f81f2d3b8ae149a0f6d1d080b8579
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4548072552034867349
+    second: roadmaps-Sheet_0
+  - first:
+      213: -1175367087994179199
+    second: roadmaps-Sheet_1
+  - first:
+      213: 1899467923712168720
+    second: roadmaps-Sheet_2
+  - first:
+      213: 7191949707050460002
+    second: roadmaps-Sheet_3
+  - first:
+      213: -3292378090254635334
+    second: roadmaps-Sheet_4
+  - first:
+      213: -676424938207638341
+    second: roadmaps-Sheet_5
+  - first:
+      213: 112256929131740997
+    second: roadmaps-Sheet_6
+  - first:
+      213: -1353390402837676194
+    second: roadmaps-Sheet_7
+  - first:
+      213: 46132402543982155
+    second: roadmaps-Sheet_8
+  - first:
+      213: -3940873100529425503
+    second: roadmaps-Sheet_9
+  - first:
+      213: 5393189274677892911
+    second: roadmaps-Sheet_10
+  - first:
+      213: -2584483505636235347
+    second: roadmaps-Sheet_11
+  - first:
+      213: -540507270805091060
+    second: roadmaps-Sheet_12
+  - first:
+      213: 2381537843562134679
+    second: roadmaps-Sheet_13
+  - first:
+      213: 6981425775913518093
+    second: roadmaps-Sheet_14
+  - first:
+      213: -5357502958891999054
+    second: roadmaps-Sheet_15
+  - first:
+      213: -4985170124008456813
+    second: roadmaps-Sheet_16
+  - first:
+      213: 4303209499191109615
+    second: roadmaps-Sheet_17
+  - first:
+      213: 8794703881910734233
+    second: roadmaps-Sheet_18
+  - first:
+      213: -9215871315475309285
+    second: roadmaps-Sheet_19
+  - first:
+      213: 393045841638604265
+    second: roadmaps-Sheet_20
+  - first:
+      213: 6013479154275453820
+    second: roadmaps-Sheet_21
+  - first:
+      213: 1740639661458314341
+    second: roadmaps-Sheet_22
+  - first:
+      213: -5181984712775767544
+    second: roadmaps-Sheet_23
+  - first:
+      213: -4987837593131847551
+    second: roadmaps-Sheet_24
+  - first:
+      213: -3974225163965819054
+    second: roadmaps-Sheet_25
+  - first:
+      213: -4520000564391318768
+    second: roadmaps-Sheet_26
+  - first:
+      213: -3897138032929372987
+    second: roadmaps-Sheet_27
+  - first:
+      213: -3510216011571981656
+    second: roadmaps-Sheet_28
+  - first:
+      213: 6951722599551552661
+    second: roadmaps-Sheet_29
+  - first:
+      213: 8111503814105006679
+    second: roadmaps-Sheet_30
+  - first:
+      213: 7286768408210846495
+    second: roadmaps-Sheet_31
+  - first:
+      213: 855245471061907320
+    second: roadmaps-Sheet_32
+  - first:
+      213: 7522277983163507742
+    second: roadmaps-Sheet_33
+  - first:
+      213: 3043533580224485425
+    second: roadmaps-Sheet_34
+  - first:
+      213: 6191616380918313692
+    second: roadmaps-Sheet_35
+  - first:
+      213: -6858402144669036138
+    second: roadmaps-Sheet_36
+  - first:
+      213: 5479689117590576767
+    second: roadmaps-Sheet_37
+  - first:
+      213: 149605411349830825
+    second: roadmaps-Sheet_38
+  - first:
+      213: -4233209604745357617
+    second: roadmaps-Sheet_39
+  - first:
+      213: 5100437661906883833
+    second: roadmaps-Sheet_40
+  - first:
+      213: -5827592688872199827
+    second: roadmaps-Sheet_41
+  - first:
+      213: 8859679459702713850
+    second: roadmaps-Sheet_42
+  - first:
+      213: -7042418292729456435
+    second: roadmaps-Sheet_43
+  - first:
+      213: 2664263257556814584
+    second: roadmaps-Sheet_44
+  - first:
+      213: -7432261573686827491
+    second: roadmaps-Sheet_45
+  - first:
+      213: 6343624976790175629
+    second: roadmaps-Sheet_46
+  - first:
+      213: -4609783558356413770
+    second: roadmaps-Sheet_47
+  - first:
+      213: -437030045171168304
+    second: roadmaps-Sheet_48
+  - first:
+      213: -3603663442614075854
+    second: roadmaps-Sheet_49
+  - first:
+      213: 3964187056814997624
+    second: roadmaps-Sheet_50
+  - first:
+      213: -5021692332466014076
+    second: roadmaps-Sheet_51
+  - first:
+      213: -79291340513465786
+    second: roadmaps-Sheet_52
+  - first:
+      213: 7520644593057645611
+    second: roadmaps-Sheet_53
+  - first:
+      213: 7306827816368040396
+    second: roadmaps-Sheet_54
+  - first:
+      213: 8656596809719016205
+    second: roadmaps-Sheet_55
+  - first:
+      213: -1190030931661424116
+    second: roadmaps-Sheet_56
+  - first:
+      213: -7152754947472442916
+    second: roadmaps-Sheet_57
+  - first:
+      213: 1767316786747306325
+    second: roadmaps-Sheet_58
+  - first:
+      213: -8058289162599084967
+    second: roadmaps-Sheet_59
+  - first:
+      213: -2276733474392519047
+    second: roadmaps-Sheet_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: roadmaps-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1371
+        width: 449
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67e1435c1002e0c0800000000000000
+      internalID: -4548072552034867349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1195
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181fb6f5cd140bfe0800000000000000
+      internalID: -1175367087994179199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1195
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013dc1743044c5a10800000000000000
+      internalID: 1899467923712168720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1195
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263a73b6720fec360800000000000000
+      internalID: 7191949707050460002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1019
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abee718129f1f42d0800000000000000
+      internalID: -3292378090254635334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1019
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc0be04a1bdc96f0800000000000000
+      internalID: -676424938207638341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1019
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f39701511de8100800000000000000
+      internalID: 112256929131740997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 843
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fff64699ac73de0800000000000000
+      internalID: -1353390402837676194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 843
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46f44afc25e3a000800000000000000
+      internalID: 46132402543982155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 843
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a32d027bc43f49c0800000000000000
+      internalID: -3940873100529425503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 667
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f275f9b221578da40800000000000000
+      internalID: 5393189274677892911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 667
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da722bed1f1122cd0800000000000000
+      internalID: -2584483505636235347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 667
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d852d308bbf78f0800000000000000
+      internalID: -540507270805091060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 591
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cbba00d0cec0120800000000000000
+      internalID: 2381537843562134679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 591
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04c41701c103e060800000000000000
+      internalID: 6981425775913518093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 591
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b06324b17356a5b0800000000000000
+      internalID: -5357502958891999054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 525
+        width: 34
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39df59d4f2e11dab0800000000000000
+      internalID: -4985170124008456813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 525
+        width: 34
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe76f597d3218bb30800000000000000
+      internalID: 4303209499191109615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 561
+        width: 38
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99dc90295901d0a70800000000000000
+      internalID: 8794703881910734233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 561
+        width: 38
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1dd169cdd5aa1080800000000000000
+      internalID: -9215871315475309285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 533
+        width: 45
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed305b4c11647500800000000000000
+      internalID: 393045841638604265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 533
+        width: 41
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b0ec61e6b247350800000000000000
+      internalID: 6013479154275453820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 527
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564dd2fbc8ef72810800000000000000
+      internalID: 1740639661458314341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 527
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80aee7beb54e518b0800000000000000
+      internalID: -5181984712775767544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 527
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1807900c224a7cab0800000000000000
+      internalID: -4987837593131847551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 523
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257166c0547b8d8c0800000000000000
+      internalID: -3974225163965819054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 523
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01be3e64f6bb541c0800000000000000
+      internalID: -4520000564391318768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 523
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c484926b959ae9c0800000000000000
+      internalID: -3897138032929372987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 523
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a21d59a225394fc0800000000000000
+      internalID: -3510216011571981656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 463
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c435b5fda797060800000000000000
+      internalID: 6951722599551552661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 463
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75284f90eb9d19070800000000000000
+      internalID: 8111503814105006679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 463
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1332f3a24dcf1560800000000000000
+      internalID: 7286768408210846495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 402
+        width: 36
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877186289317edb00800000000000000
+      internalID: 855245471061907320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 402
+        width: 36
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14e33098ff746860800000000000000
+      internalID: 7522277983163507742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 402
+        width: 36
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138d0477aadcc3a20800000000000000
+      internalID: 3043533580224485425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 431
+        width: 52
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2302a3b4a0de550800000000000000
+      internalID: 6191616380918313692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 399
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6919938369f02d0a0800000000000000
+      internalID: -6858402144669036138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 399
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e5f854834cb0c40800000000000000
+      internalID: 5479689117590576767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 399
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac9bf73451831200800000000000000
+      internalID: 149605411349830825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 349
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc691610b4e9045c0800000000000000
+      internalID: -4233209604745357617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 349
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4dbfcb70568c640800000000000000
+      internalID: 5100437661906883833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 349
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69eb1c435b302fa0800000000000000
+      internalID: -5827592688872199827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 349
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afda76b2787e3fa70800000000000000
+      internalID: 8859679459702713850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 352
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8d52600ed444e90800000000000000
+      internalID: -7042418292729456435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 352
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa8cce115d59f420800000000000000
+      internalID: 2664263257556814584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 307
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d166c9ef97d4bd890800000000000000
+      internalID: -7432261573686827491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 303
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fbfd17e45190850800000000000000
+      internalID: 6343624976790175629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 254
+        width: 78
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b2dab00742c600c0800000000000000
+      internalID: -4609783558356413770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 242
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db46694d7b5fe9f0800000000000000
+      internalID: -437030045171168304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 253
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e3de421373dfdc0800000000000000
+      internalID: -3603663442614075854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 254
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870c8a0002f930730800000000000000
+      internalID: 3964187056814997624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 251
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4887f000e6d5f4ab0800000000000000
+      internalID: -5021692332466014076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 236
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a2ee622fc46eef0800000000000000
+      internalID: -79291340513465786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 219
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24c92b4962be5860800000000000000
+      internalID: 7520644593057645611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc96f8d8f21176560800000000000000
+      internalID: 7306827816368040396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 235
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0be41f0fe8622870800000000000000
+      internalID: 8656596809719016205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 236
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0af7963c292c7fe0800000000000000
+      internalID: -1190030931661424116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 221
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9bc7ea54f4cbc90800000000000000
+      internalID: -7152754947472442916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 27
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55178aff045c68810800000000000000
+      internalID: 1767316786747306325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 27
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95cc6e583b43b2090800000000000000
+      internalID: -8058289162599084967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roadmaps-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 27
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ec79ab7fa6760e0800000000000000
+      internalID: -2276733474392519047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      roadmaps-Sheet_0: -4548072552034867349
+      roadmaps-Sheet_1: -1175367087994179199
+      roadmaps-Sheet_10: 5393189274677892911
+      roadmaps-Sheet_11: -2584483505636235347
+      roadmaps-Sheet_12: -540507270805091060
+      roadmaps-Sheet_13: 2381537843562134679
+      roadmaps-Sheet_14: 6981425775913518093
+      roadmaps-Sheet_15: -5357502958891999054
+      roadmaps-Sheet_16: -4985170124008456813
+      roadmaps-Sheet_17: 4303209499191109615
+      roadmaps-Sheet_18: 8794703881910734233
+      roadmaps-Sheet_19: -9215871315475309285
+      roadmaps-Sheet_2: 1899467923712168720
+      roadmaps-Sheet_20: 393045841638604265
+      roadmaps-Sheet_21: 6013479154275453820
+      roadmaps-Sheet_22: 1740639661458314341
+      roadmaps-Sheet_23: -5181984712775767544
+      roadmaps-Sheet_24: -4987837593131847551
+      roadmaps-Sheet_25: -3974225163965819054
+      roadmaps-Sheet_26: -4520000564391318768
+      roadmaps-Sheet_27: -3897138032929372987
+      roadmaps-Sheet_28: -3510216011571981656
+      roadmaps-Sheet_29: 6951722599551552661
+      roadmaps-Sheet_3: 7191949707050460002
+      roadmaps-Sheet_30: 8111503814105006679
+      roadmaps-Sheet_31: 7286768408210846495
+      roadmaps-Sheet_32: 855245471061907320
+      roadmaps-Sheet_33: 7522277983163507742
+      roadmaps-Sheet_34: 3043533580224485425
+      roadmaps-Sheet_35: 6191616380918313692
+      roadmaps-Sheet_36: -6858402144669036138
+      roadmaps-Sheet_37: 5479689117590576767
+      roadmaps-Sheet_38: 149605411349830825
+      roadmaps-Sheet_39: -4233209604745357617
+      roadmaps-Sheet_4: -3292378090254635334
+      roadmaps-Sheet_40: 5100437661906883833
+      roadmaps-Sheet_41: -5827592688872199827
+      roadmaps-Sheet_42: 8859679459702713850
+      roadmaps-Sheet_43: -7042418292729456435
+      roadmaps-Sheet_44: 2664263257556814584
+      roadmaps-Sheet_45: -7432261573686827491
+      roadmaps-Sheet_46: 6343624976790175629
+      roadmaps-Sheet_47: -4609783558356413770
+      roadmaps-Sheet_48: -437030045171168304
+      roadmaps-Sheet_49: -3603663442614075854
+      roadmaps-Sheet_5: -676424938207638341
+      roadmaps-Sheet_50: 3964187056814997624
+      roadmaps-Sheet_51: -5021692332466014076
+      roadmaps-Sheet_52: -79291340513465786
+      roadmaps-Sheet_53: 7520644593057645611
+      roadmaps-Sheet_54: 7306827816368040396
+      roadmaps-Sheet_55: 8656596809719016205
+      roadmaps-Sheet_56: -1190030931661424116
+      roadmaps-Sheet_57: -7152754947472442916
+      roadmaps-Sheet_58: 1767316786747306325
+      roadmaps-Sheet_59: -8058289162599084967
+      roadmaps-Sheet_6: 112256929131740997
+      roadmaps-Sheet_60: -2276733474392519047
+      roadmaps-Sheet_7: -1353390402837676194
+      roadmaps-Sheet_8: 46132402543982155
+      roadmaps-Sheet_9: -3940873100529425503
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
