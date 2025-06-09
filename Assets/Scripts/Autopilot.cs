@@ -133,8 +133,6 @@ public class Autopilot : InputManager
 		IsHandBraking = true;
 	}
 
-	private bool HasHonked = false;
-
 	public void UseHonk() {
 
 	}

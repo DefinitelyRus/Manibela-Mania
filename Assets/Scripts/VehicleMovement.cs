@@ -549,6 +549,11 @@ public class VehicleMovement : MonoBehaviour {
 		if (Input.OnGear3) ChangeGear(3, true);
 		if (Input.OnGearR) ChangeGear(-1, true);
 
+		if (Input.OnToggleAuto) {
+			UseAutoShift = !UseAutoShift;
+			AudioHandler.Play(VehicleSFX.OneShotSFX.GearShift);
+		}
+
 		if (Input.OnHandBrake) AudioHandler.Play(VehicleSFX.OneShotSFX.Handbrake);
 
 		if (Input.OnHonk) {

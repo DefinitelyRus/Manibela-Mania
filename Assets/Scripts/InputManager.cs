@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
 	public KeyCode Gear3 = KeyCode.Alpha3;
 	public KeyCode GearR = KeyCode.R;
 	public KeyCode Honk = KeyCode.H;
+	public KeyCode ToggleAuto = KeyCode.Return;
 
 	public bool IsAccelerating { get; protected set; } = false;
 	public bool IsDecelerating { get; protected set; } = false;
@@ -27,6 +28,7 @@ public class InputManager : MonoBehaviour
 	public bool OnGear3 { get; protected set; } = false;
 	public bool OnGearR { get; protected set; } = false;
 	public bool OnHonk { get; protected set; } = false;
+	public bool OnToggleAuto { get; protected set; } = false;
 	public float Steering { get; protected set; } = 0;
 
 	[Header("Menu Controls")]
@@ -68,6 +70,8 @@ public class InputManager : MonoBehaviour
 		OnGear2 = Input.GetKeyDown(Gear2);
 		OnGear3 = Input.GetKeyDown(Gear3);
 		OnGearR = Input.GetKeyDown(GearR);
+
+		OnToggleAuto = Input.GetKeyDown(ToggleAuto);
 
 		#endregion
 

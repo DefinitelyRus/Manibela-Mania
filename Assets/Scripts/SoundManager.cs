@@ -26,8 +26,6 @@ public class SoundManager : MonoBehaviour
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
 
-    private bool isInMenu;
-
 
 
     public void RegisterExtraSFXSource(AudioSource source)
@@ -110,7 +108,6 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayMenuMusic()
     {
-        isInMenu = true;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(menuMusicTracks));
     }
@@ -124,14 +121,12 @@ public class SoundManager : MonoBehaviour
     }
     public void SwitchToGameMusic()
     {
-        isInMenu = false;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(gameMusicTracks));
     }
 
     public void SwitchToMenuMusic()
     {
-        isInMenu = true;
         StopAllCoroutines();
         StartCoroutine(PlayMusicLoop(menuMusicTracks));
     }
