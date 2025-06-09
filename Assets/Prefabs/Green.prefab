@@ -96,7 +96,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214909698827805376}
-  - component: {fileID: 2750929719353815709}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -119,25 +118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5257879637505517108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2750929719353815709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744700866338302159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b212e1bd5d1a7e04da09b7c8e7b67272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoneNumber: 4
-  successEffect: {fileID: 0}
-  zoneText: {fileID: 0}
-  timerBarPrefab: {fileID: 9161615076941358779, guid: f58758cbf0208a44fa1f3f4240f98e7f, type: 3}
-  dropOffTimer: 2
-  forceDropOffAfterAreas: 5
-  speedThreshold: 0.1
 --- !u!1 &1775185737605084428
 GameObject:
   m_ObjectHideFlags: 0

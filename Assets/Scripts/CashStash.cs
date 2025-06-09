@@ -1,9 +1,8 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CashStash : MonoBehaviour
 {
-	public int CashValue = 0;
+	public int CoinValue = 0;
 
 	public FareManager FareManager;
 
@@ -11,45 +10,31 @@ public class CashStash : MonoBehaviour
 
 	public InputManager InputManager;
 
-	/// <summary>
-	/// Scans for mouse clicks to commit or clear staged change.
-	/// </summary>
-	/// <param name="debug">Whether to print logs to console.</param>
-	private void ScanMouseClick(bool debug = false) {
-
-		//Clear staged coins and give change
-		if (InputManager.OnMouse1) {
-			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-			if (Collider.OverlapPoint(mousePosition)) {
-				FareManager.StageChange(CashValue);
-
-				if (debug) Debug.Log($"[CashStash] Staged P{CashValue}. Total: {FareManager.StagedChange}.");
-			}
-		}
-
-		//Clear staged coins
-		else if (InputManager.OnMouse2) {
-			if (Collider.OverlapPoint(Input.mousePosition)) {
-				FareManager.UnstageChange(CashValue);
-
-				if (debug) Debug.Log($"[CashStash] Unstaged P{CashValue}. Total: {FareManager.StagedChange}.");
-			}
-		}
-	}
-
-	#region Unity Callbacks
-
 	private void Start() {
-		if (!FareManager.Denominations.Contains(CashValue)) {
-			Debug.LogError($"[CashStash] Invalid cash value: {CashValue}. Must be one of the denominations.");
-			return;
+		// Validate that the coin value is one of the allowed denominations
+		bool isValidDenomination = false;
+		foreach (int denomination in FareManager.Denominations) {
+			if (CoinValue == denomination) {
+				isValidDenomination = true;
+				break;
+			}
+		}
+
+		if (!isValidDenomination) {
+			Debug.LogError($"[CashStash] Invalid coin value: {CoinValue}. Must be one of the denominations: {string.Join(", ", FareManager.Denominations)}");
 		}
 	}
 
 	private void Update() {
-		ScanMouseClick(true);
+		if (InputManager.OnMouse1) {
+			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			if (Collider.OverlapPoint(mousePosition)) {
+				if (FareManager.CurrentPassenger != null) {
+					// Add the coin value to the current passenger's payment
+					FareManager.CurrentPassenger.FareToPay += CoinValue;
+					Debug.Log($"[CashStash] Added P{CoinValue} to payment. Total: P{FareManager.CurrentPassenger.FareToPay}");
+				}
+			}
+		}
 	}
-
-	#endregion
 }

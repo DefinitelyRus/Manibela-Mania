@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8329242175688617994}
-  - component: {fileID: 8661728463794727106}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -32,25 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5257879637505517108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8661728463794727106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479762054423781766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b212e1bd5d1a7e04da09b7c8e7b67272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoneNumber: 2
-  successEffect: {fileID: 0}
-  zoneText: {fileID: 0}
-  timerBarPrefab: {fileID: 9161615076941358779, guid: f58758cbf0208a44fa1f3f4240f98e7f, type: 3}
-  dropOffTimer: 2
-  forceDropOffAfterAreas: 5
-  speedThreshold: 0.1
 --- !u!1 &544014838992314298
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +877,8 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: 008ac8c86ccc6864e8b96f897afcbb15, type: 3}
   spawnChancePercent: 15
 --- !u!1 &5627749023540127229
 GameObject:
@@ -1215,6 +1197,8 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: 008ac8c86ccc6864e8b96f897afcbb15, type: 3}
   spawnChancePercent: 15
 --- !u!1 &6902874957526364613
 GameObject:
@@ -1300,6 +1284,8 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: 008ac8c86ccc6864e8b96f897afcbb15, type: 3}
   spawnChancePercent: 15
 --- !u!1 &8084006219532907159
 GameObject:
@@ -1484,4 +1470,6 @@ MonoBehaviour:
   - {fileID: 1136966778668732023, guid: 8c67b26ac4c746d4a9565e4899dd5121, type: 3}
   - {fileID: 6126154915563494781, guid: 7dd8552a353940549a8255f608153d1f, type: 3}
   - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: c68e964d03dc3e14593fa5046316cd7f, type: 3}
+  - {fileID: 7907230191819672125, guid: 008ac8c86ccc6864e8b96f897afcbb15, type: 3}
   spawnChancePercent: 15

@@ -22,6 +22,8 @@ public class PassengerCarrier : MonoBehaviour
 
 	public VehicleMovement JeepM;
 
+	public PassengerSeating PassengerSeating;
+
 	#endregion
 
 	#region Infil & Exfil
@@ -60,14 +62,34 @@ public class PassengerCarrier : MonoBehaviour
 	/// </summary>
 	/// <param name="passenger">The passenger to add.</param>
 	/// <returns>True if the passenger was added, false if the carrier is full.</returns>
-	public void AddPassenger(BoardedPassenger passenger, bool debug = false) {
-		if (Passengers.Count >= MaximumPassengers) {
-			if (debug) Debug.Log($"[PassengerCarrier] Over capacity!");
+	public bool AddPassenger(BoardedPassenger passenger)
+	{
+		if (Passengers.Count >= MaximumPassengers)
+		{
+			Debug.LogWarning("[PassengerCarrier] Cannot add passenger - at capacity!");
+			return false;
+		}
+
+		// Check if this character type is already seated
+		if (PassengerSeating != null)
+		{
+			// Get the character number from the passenger's index
+			int passengerIndex = Passengers.Count;
+			string characterName = $"Char{passengerIndex + 1}";
+
+			// Check if this character is already seated
+			foreach (PassengerSeating.Seat seat in PassengerSeating.seats)
+			{
+				if (seat.occupied && seat.currentPassenger == characterName)
+				{
+					Debug.LogWarning($"[PassengerCarrier] Cannot add {characterName} - already seated!");
+					return false;
+				}
+			}
 		}
 
 		Passengers.Add(passenger);
-
-		if (debug) Debug.Log($"[PassengerCarrier] Passenger added. ({Passengers.Count}/{MaximumPassengers})");
+		return true;
 	}
 
 	/// <summary>
@@ -85,16 +107,13 @@ public class PassengerCarrier : MonoBehaviour
 	public void AbductPassenger(bool debug = false) {
 		BoardedPassenger newPassenger = new(FareManager, this, debug);
 
-		AddPassenger(newPassenger, debug);
-
-		StartCoroutine(PaymentWait(newPassenger, Random.Range(MinPayWait, MaxPayWait), debug));
-
-		if (Passengers.Count > MaximumPassengers) {
+		if (AddPassenger(newPassenger)) {
+			StartCoroutine(PaymentWait(newPassenger, Random.Range(MinPayWait, MaxPayWait), debug));
+			if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger successfully. ({Passengers.Count}/{MaximumPassengers})");
+		} else {
 			EjectPassenger(newPassenger, EntranceLocation);
-			if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger but exceeded capacity. Ejecting passenger.");
+			if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger but could not add to carrier. Ejecting passenger.");
 		}
-
-		else if (debug) Debug.Log($"[PassengerCarrier] Abducted passenger successfully. ({Passengers.Count}/{MaximumPassengers})");
 	}
 
 	/// <summary>
@@ -121,9 +140,9 @@ public class PassengerCarrier : MonoBehaviour
 				}
 
 				if (missedStop) {
-					int penalty = (int) (FareManager.MissedStopPenalty * Time.deltaTime);
-					FareManager.TotalPenalty += penalty;
-					if (debug) Debug.Log($"[PassengerCarrier] Missed stop! Penalty: P{FareManager.TotalPenalty} +P{penalty}");
+					// Add a simple penalty for missing stops
+					FareManager.TotalPenalty += 50;
+					if (debug) Debug.Log($"[PassengerCarrier] Missed stop! Penalty: P{FareManager.TotalPenalty}");
 				}
 			}
 		}
@@ -162,18 +181,21 @@ public class PassengerCarrier : MonoBehaviour
 	/// </summary>
 	/// <param name="passenger">The passenger to yeet.</param>
 	public void EjectPassenger(BoardedPassenger passenger, Vector2 dropoffPoint, bool debug = false) {
+		// Get the passenger's index before removing them
+		int passengerIndex = Passengers.IndexOf(passenger);
+		
+		// Remove the passenger from the carrier
 		RemovePassenger(passenger);
 
-		//TODO: Change prefab here?
+		// Clear the passenger's seat
+		if (PassengerSeating != null) {
+			PassengerSeating.ClearSeat($"Char{passengerIndex + 1}");
+		}
+
+		// Spawn the passenger prefab at the drop-off point
 		GameObject someDude = Instantiate(PassengerPrefab, dropoffPoint, Quaternion.identity);
 
-		//Remove passenger from seat --------------------------------------------
-		
-		//TODO: DO STUFF HERE ONLY PLS
-
-		//-----------------------------------------------------------------------
-
-		if (debug) Debug.Log($"[PassengerCarrier] Ejected passenger.");
+		if (debug) Debug.Log($"[PassengerCarrier] Ejected passenger from seat {passengerIndex + 1}.");
 	}
 
 	#endregion
@@ -183,6 +205,9 @@ public class PassengerCarrier : MonoBehaviour
 	private void Start() {
 		if (FareManager == null) {
 			Debug.LogError("[PassengerCarrier] FareManager not found in the scene.");
+		}
+		if (PassengerSeating == null) {
+			Debug.LogError("[PassengerCarrier] PassengerSeating not found in the scene.");
 		}
 	}
 
