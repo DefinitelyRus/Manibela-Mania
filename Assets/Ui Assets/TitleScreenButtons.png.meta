@@ -136,10 +136,10 @@ TextureImporter:
       name: TitleScreenButtons_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 148
-        width: 126
-        height: 40
+        x: 0
+        y: 144
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,9 +159,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 147
-        width: 127
-        height: 42
+        y: 144
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: TitleScreenButtons_2
       rect:
         serializedVersion: 2
-        x: 255
-        y: 148
-        width: 129
-        height: 36
+        x: 256
+        y: 144
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: TitleScreenButtons_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 100
-        width: 126
-        height: 40
+        x: 0
+        y: 96
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,9 +225,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 99
-        width: 127
-        height: 42
+        y: 96
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: TitleScreenButtons_5
       rect:
         serializedVersion: 2
-        x: 255
-        y: 100
-        width: 129
-        height: 36
+        x: 256
+        y: 96
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: TitleScreenButtons_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 52
-        width: 126
-        height: 40
+        x: 0
+        y: 48
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,9 +291,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 51
-        width: 127
-        height: 42
+        y: 48
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: TitleScreenButtons_8
       rect:
         serializedVersion: 2
-        x: 255
-        y: 52
-        width: 129
-        height: 36
+        x: 256
+        y: 48
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,10 +334,10 @@ TextureImporter:
       name: TitleScreenButtons_9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 126
-        height: 40
+        x: 0
+        y: 0
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,9 +357,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 3
-        width: 127
-        height: 42
+        y: 0
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: TitleScreenButtons_11
       rect:
         serializedVersion: 2
-        x: 255
-        y: 4
-        width: 129
-        height: 36
+        x: 256
+        y: 0
+        width: 128
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f5c2670a36b3bc549861ea7420bb4c1e
     internalID: 0
     vertices: []
     indices: 

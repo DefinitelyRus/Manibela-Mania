@@ -1,20 +1,39 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIhandler : MonoBehaviour
 {
     [SerializeField] GameObject SettingsUI;
 
-   
+    [Header("Sprite Toggle")]
+    [SerializeField] Image toggleTarget; 
+    [SerializeField] Sprite openedSprite;
+    [SerializeField] Sprite closedSprite;
 
-    public void open()
+   private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (SettingsUI.activeSelf)
+                OnExit();
+            else
+                open();
+        }
+    }
+
+       public void open()
     {
         SettingsUI.SetActive(true);
+        if (toggleTarget != null && openedSprite != null)
+            toggleTarget.sprite = openedSprite;
     }
 
     public void OnExit()
     {
         SettingsUI.SetActive(false);
+        if (toggleTarget != null && closedSprite != null)
+            toggleTarget.sprite = closedSprite;
     }
 
     public string sceneName;
