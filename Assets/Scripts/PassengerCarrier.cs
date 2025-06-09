@@ -132,6 +132,8 @@ public class PassengerCarrier : MonoBehaviour
 		//Since we're removing passengers from the list, we expect this to happen.
 	}
 
+	public Color DropOffColor = Color.red;
+
 	/// <summary>
 	/// Requests a full stop for the vehicle to drop off a passenger.
 	/// This removes the passenger from the vehicle and spawns them at the drop-off point.
@@ -150,6 +152,8 @@ public class PassengerCarrier : MonoBehaviour
 		else if (atRightmostLane) dropOffX = DropOffXRight + DropOffXOffset;
 
 		Vector2 dropOffTo = new(dropOffX, transform.position.y);
+
+		FareManager.RearviewSprite.color = DropOffColor;
 
 		if (JeepM.Speed == 0 && isPulledOver) {
 			if (debug) Debug.Log($"[PassengerCarrier] Jeep stopped. Ejecting passenger {passenger}.");
@@ -174,6 +178,8 @@ public class PassengerCarrier : MonoBehaviour
 		//-----------------------------------------------------------------------
 
 		if (debug) Debug.Log($"[PassengerCarrier] Ejected passenger.");
+
+		FareManager.RearviewSprite.color = Color.white;
 	}
 
 	#endregion
