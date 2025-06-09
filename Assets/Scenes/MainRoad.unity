@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 109814077}
   - component: {fileID: 109814079}
   m_Layer: 5
-  m_Name: close
+  m_Name: 'Pause '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ RectTransform:
   m_GameObject: {fileID: 109814075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2727798, y: 0.2727798, z: 0.2727798}
+  m_LocalScale: {x: 0.67776376, y: 0.67776376, z: 0.67776376}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 831561706}
@@ -975,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -681, y: 444}
+  m_AnchoredPosition: {x: -657, y: 444}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &255182603
@@ -2700,6 +2700,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsUI: {fileID: 1600910683}
+  toggleTarget: {fileID: 109814077}
+  openedSprite: {fileID: 511849845511107077, guid: fc9effae39ca58b49b17c139c3ea357e, type: 3}
+  closedSprite: {fileID: 21300000, guid: 8c096ae17ee0c16449057237deaa50ae, type: 3}
   sceneName: 
 --- !u!114 &831561703
 MonoBehaviour:
@@ -4473,7 +4476,7 @@ RectTransform:
   m_GameObject: {fileID: 1600910683}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 247.18422, y: 247.18422, z: 247.18422}
+  m_LocalScale: {x: 314.4229, y: 314.4229, z: 314.4229}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 456252874}
@@ -4483,7 +4486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -3}
+  m_AnchoredPosition: {x: 1092, y: 258}
   m_SizeDelta: {x: 1.2, y: 1.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1610106122
