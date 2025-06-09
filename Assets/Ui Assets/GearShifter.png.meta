@@ -1,0 +1,821 @@
+fileFormatVersion: 2
+guid: abe22e0a85d25884a951555a8434c0df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1584882174841546098
+    second: GearShifter_0
+  - first:
+      213: 2574958119714069960
+    second: GearShifter_1
+  - first:
+      213: 9102361413173193110
+    second: GearShifter_2
+  - first:
+      213: -7313936443255052979
+    second: GearShifter_3
+  - first:
+      213: 4110583540585547928
+    second: GearShifter_4
+  - first:
+      213: 3604013543958881451
+    second: GearShifter_5
+  - first:
+      213: -4205777149531076205
+    second: GearShifter_6
+  - first:
+      213: 4662534707485085001
+    second: GearShifter_7
+  - first:
+      213: -4987224101135004775
+    second: GearShifter_8
+  - first:
+      213: -2801630629904968666
+    second: GearShifter_9
+  - first:
+      213: -2407746543583422144
+    second: GearShifter_10
+  - first:
+      213: 1516974032654996405
+    second: GearShifter_11
+  - first:
+      213: -5412072271128315531
+    second: GearShifter_12
+  - first:
+      213: 6430387925797025055
+    second: GearShifter_13
+  - first:
+      213: 5564688934880966421
+    second: GearShifter_14
+  - first:
+      213: -5525947334725027527
+    second: GearShifter_15
+  - first:
+      213: 6926074952807524404
+    second: GearShifter_16
+  - first:
+      213: 1665269147468899218
+    second: GearShifter_17
+  - first:
+      213: 3732081777184152028
+    second: GearShifter_18
+  - first:
+      213: 2069796925574472410
+    second: GearShifter_19
+  - first:
+      213: -8221225928349724441
+    second: GearShifter_20
+  - first:
+      213: -4127698086976397589
+    second: GearShifter_21
+  - first:
+      213: -8732764527552689760
+    second: GearShifter_22
+  - first:
+      213: -7929916412165204288
+    second: GearShifter_23
+  - first:
+      213: -2104065059436013606
+    second: GearShifter_24
+  - first:
+      213: 265255303301251079
+    second: GearShifter_25
+  - first:
+      213: -7913767299538483142
+    second: GearShifter_26
+  - first:
+      213: -2525862352604698488
+    second: GearShifter_27
+  - first:
+      213: -8579522438360862769
+    second: GearShifter_28
+  - first:
+      213: -8240251431213849163
+    second: GearShifter_29
+  - first:
+      213: -1051773479089820868
+    second: GearShifter_30
+  - first:
+      213: 1940819548114817697
+    second: GearShifter_31
+  - first:
+      213: -4774428278102438391
+    second: GearShifter_32
+  - first:
+      213: -3567956915767761941
+    second: GearShifter_33
+  - first:
+      213: 5081058168704316789
+    second: GearShifter_34
+  - first:
+      213: -8290216642912854407
+    second: GearShifter_35
+  - first:
+      213: 6963279274681264033
+    second: GearShifter_36
+  - first:
+      213: 472349297395282256
+    second: GearShifter_37
+  - first:
+      213: -5721876472949504462
+    second: GearShifter_38
+  - first:
+      213: -7451099403168369426
+    second: GearShifter_39
+  - first:
+      213: -7549590476209649328
+    second: GearShifter_40
+  - first:
+      213: -1139043053876429174
+    second: GearShifter_41
+  - first:
+      213: -3904918972404366769
+    second: GearShifter_42
+  - first:
+      213: -1932345409793045663
+    second: GearShifter_43
+  - first:
+      213: 5975086925100006964
+    second: GearShifter_44
+  - first:
+      213: 5747660968612219068
+    second: GearShifter_45
+  - first:
+      213: 3991838322738104248
+    second: GearShifter_46
+  - first:
+      213: 668161478450791951
+    second: GearShifter_47
+  - first:
+      213: 952314346391724091
+    second: GearShifter_48
+  - first:
+      213: -3596728269885149962
+    second: GearShifter_49
+  - first:
+      213: -1687742128598733989
+    second: GearShifter_50
+  - first:
+      213: -1765524603611625353
+    second: GearShifter_51
+  - first:
+      213: 3887127443530237364
+    second: GearShifter_52
+  - first:
+      213: -3333175251127984666
+    second: GearShifter_53
+  - first:
+      213: -8379274372179357291
+    second: GearShifter_54
+  - first:
+      213: -8934558841052349198
+    second: GearShifter_55
+  - first:
+      213: 4072722973827409422
+    second: GearShifter_56
+  - first:
+      213: -1073441295377888613
+    second: GearShifter_57
+  - first:
+      213: 512987594780998237
+    second: GearShifter_58
+  - first:
+      213: -4005492662337363219
+    second: GearShifter_59
+  - first:
+      213: -272134209080317210
+    second: GearShifter_60
+  - first:
+      213: 4500300884811036941
+    second: GearShifter_61
+  - first:
+      213: -3890036893057903565
+    second: GearShifter_62
+  - first:
+      213: 9038201366977590599
+    second: GearShifter_63
+  - first:
+      213: 7589959777710570995
+    second: GearShifter_64
+  - first:
+      213: 876733843289392069
+    second: GearShifter_65
+  - first:
+      213: 6486461479082590352
+    second: GearShifter_66
+  - first:
+      213: -6811881300838418178
+    second: GearShifter_67
+  - first:
+      213: -2350468598992625705
+    second: GearShifter_68
+  - first:
+      213: 749980540260472960
+    second: GearShifter_69
+  - first:
+      213: -6768976014768927681
+    second: GearShifter_70
+  - first:
+      213: 5235867896397644714
+    second: GearShifter_71
+  - first:
+      213: 5920715714417232292
+    second: GearShifter_72
+  - first:
+      213: -4398680065937002924
+    second: GearShifter_73
+  - first:
+      213: 236008368662361636
+    second: GearShifter_74
+  - first:
+      213: 8704923570179553083
+    second: GearShifter_75
+  - first:
+      213: -8743397626366144606
+    second: GearShifter_76
+  - first:
+      213: -3763596151777982252
+    second: GearShifter_77
+  - first:
+      213: 6194766187218097408
+    second: GearShifter_78
+  - first:
+      213: 5236144751383119656
+    second: GearShifter_79
+  - first:
+      213: 7227451237868180781
+    second: GearShifter_80
+  - first:
+      213: -383948975442924708
+    second: GearShifter_81
+  - first:
+      213: -166577393078450197
+    second: GearShifter_82
+  - first:
+      213: -228259099734002831
+    second: GearShifter_83
+  - first:
+      213: 87660371988804886
+    second: GearShifter_84
+  - first:
+      213: -773882776903884594
+    second: GearShifter_85
+  - first:
+      213: -2507508313970383615
+    second: GearShifter_86
+  - first:
+      213: -7742763230020250953
+    second: GearShifter_87
+  - first:
+      213: -6603916069623559095
+    second: GearShifter_88
+  - first:
+      213: -2443092662631743078
+    second: GearShifter_89
+  - first:
+      213: 3511136098336116817
+    second: GearShifter_90
+  - first:
+      213: -5698688196020872599
+    second: GearShifter_91
+  - first:
+      213: -441249910116647797
+    second: GearShifter_92
+  - first:
+      213: 7231170958582605752
+    second: GearShifter_93
+  - first:
+      213: -5769266547399356797
+    second: GearShifter_94
+  - first:
+      213: 6269205856042053569
+    second: GearShifter_95
+  - first:
+      213: -6228194552344347739
+    second: GearShifter_96
+  - first:
+      213: 2909679770480497926
+    second: GearShifter_97
+  - first:
+      213: -165721305032075070
+    second: GearShifter_98
+  - first:
+      213: 5887618985171847906
+    second: GearShifter_99
+  - first:
+      213: 9196233409895051926
+    second: GearShifter_100
+  - first:
+      213: 354891274476801073
+    second: GearShifter_101
+  - first:
+      213: -5259843495301291054
+    second: GearShifter_102
+  - first:
+      213: 6191529247655630293
+    second: GearShifter_103
+  - first:
+      213: -5770397776289584554
+    second: GearShifter_104
+  - first:
+      213: -1576396567859085097
+    second: GearShifter_105
+  - first:
+      213: 4658426436020129482
+    second: GearShifter_106
+  - first:
+      213: 66203796039887774
+    second: GearShifter_107
+  - first:
+      213: -6840180160935835677
+    second: GearShifter_108
+  - first:
+      213: -7056319710759164894
+    second: GearShifter_109
+  - first:
+      213: 1045550227126999689
+    second: GearShifter_110
+  - first:
+      213: 4578177728393473800
+    second: GearShifter_111
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GearShifter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2756742e0f1aef510800000000000000
+      internalID: 1584882174841546098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd901564c61cb320800000000000000
+      internalID: 2574958119714069960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69929699a75125e70800000000000000
+      internalID: 9102361413173193110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45aff54e8daf7a90800000000000000
+      internalID: -7313936443255052979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8984b2c83f9bb0930800000000000000
+      internalID: 4110583540585547928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 64
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4ad5d2937040230800000000000000
+      internalID: 3604013543958881451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399ceb537f312a5c0800000000000000
+      internalID: -4205777149531076205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d04900d96a4b040800000000000000
+      internalID: 4662534707485085001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bc49c7a12d9cab0800000000000000
+      internalID: -4987224101135004775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62419a829cb9e19d0800000000000000
+      internalID: -2801630629904968666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04919808647f59ed0800000000000000
+      internalID: -2407746543583422144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b394ed68df5d0510800000000000000
+      internalID: 1516974032654996405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579b7ac91f474e4b0800000000000000
+      internalID: -5412072271128315531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_13
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15b715bfb35d3950800000000000000
+      internalID: 6430387925797025055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51770217a1fb93d40800000000000000
+      internalID: 5564688934880966421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GearShifter_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939b2324d24ef43b0800000000000000
+      internalID: -5525947334725027527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c099eaa91c0f6e047a0669ce6805a434
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GearShifter_0: 1584882174841546098
+      GearShifter_1: 2574958119714069960
+      GearShifter_10: -2407746543583422144
+      GearShifter_11: 1516974032654996405
+      GearShifter_12: -5412072271128315531
+      GearShifter_13: 6430387925797025055
+      GearShifter_14: 5564688934880966421
+      GearShifter_15: -5525947334725027527
+      GearShifter_2: 9102361413173193110
+      GearShifter_3: -7313936443255052979
+      GearShifter_4: 4110583540585547928
+      GearShifter_5: 3604013543958881451
+      GearShifter_6: -4205777149531076205
+      GearShifter_7: 4662534707485085001
+      GearShifter_8: -4987224101135004775
+      GearShifter_9: -2801630629904968666
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
