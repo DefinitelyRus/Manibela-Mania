@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIhandler : MonoBehaviour
 {
     [SerializeField] GameObject SettingsUI;
+    [SerializeField] GameObject ControlsPanel;
 
     [Header("Sprite Toggle")]
     [SerializeField] Image toggleTarget; 
@@ -20,6 +21,11 @@ public class UIhandler : MonoBehaviour
             else
                 open();
         }
+    }
+
+    public void Controls()
+    {
+        ControlsPanel.SetActive(true);
     }
 
        public void open()
