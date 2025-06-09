@@ -1003,8 +1003,8 @@ Transform:
   m_GameObject: {fileID: 255182603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.45, y: -0.28, z: 0}
-  m_LocalScale: {x: 9.35, y: 9.35, z: 9.35}
+  m_LocalPosition: {x: -1.95, y: -0.13, z: 0}
+  m_LocalScale: {x: 5.2500005, y: 5.2500005, z: 5.2500005}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1982664299}
@@ -1017,6 +1017,10 @@ Transform:
   - {fileID: 1961997843}
   - {fileID: 101472619}
   - {fileID: 1804444998}
+  - {fileID: 1484821972}
+  - {fileID: 2016452614}
+  - {fileID: 749173658}
+  - {fileID: 1939492360}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259877285
@@ -1685,7 +1689,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1716,10 +1720,6 @@ Transform:
   m_Children:
   - {fileID: 255182604}
   - {fileID: 1265542188}
-  - {fileID: 1484821972}
-  - {fileID: 2016452614}
-  - {fileID: 749173658}
-  - {fileID: 1939492360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 415336950}
-  Offset: {x: 10, y: 8}
+  Offset: {x: 6.5, y: 7}
   FollowSpeed: -1
   RotateWithTarget: 0
   RotationDamping: 5
@@ -2202,11 +2202,11 @@ Transform:
   m_GameObject: {fileID: 749173657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.72, y: -4.61, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.5850265, y: -0.46310157, z: 0.21390373}
+  m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 255182604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &749173659
 BoxCollider2D:
@@ -2394,9 +2394,9 @@ MonoBehaviour:
   AutoShiftUpThreshold: 0.95
   AutoShiftDownThreshold: 0.85
   Tachometer: 0
-  Gear1Speed: 300
-  Gear2Speed: 700
-  Gear3Speed: 1200
+  Gear1Speed: 200
+  Gear2Speed: 450
+  Gear3Speed: 700
   GearRSpeed: 100
   Gear1Time: 4
   Gear2Time: 12
@@ -2404,8 +2404,8 @@ MonoBehaviour:
   GearRTime: 2
   BrakeMaxTime: 1
   BrakeDecel: 0
-  BrakeMaxDecel: 180
-  HandbrakeDecel: 500
+  BrakeMaxDecel: 200
+  HandbrakeDecel: 350
   NaturalDecel: 0.1
   SteeringSensitivity: 25
   SteerSpeed: 2
@@ -4139,11 +4139,11 @@ Transform:
   m_GameObject: {fileID: 1484821971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.79, y: -4.61, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.6299464, y: -0.46310157, z: 0.21390373}
+  m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 255182604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1484821973
 BoxCollider2D:
@@ -5178,11 +5178,11 @@ Transform:
   m_GameObject: {fileID: 1939492359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.23, y: -4.61, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.0673795, y: -0.46310157, z: 0.21390373}
+  m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 255182604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1939492361
 BoxCollider2D:
@@ -5648,11 +5648,11 @@ Transform:
   m_GameObject: {fileID: 2016452613}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.24, y: -4.61, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.1058822, y: -0.46310157, z: 0.21390373}
+  m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 255182604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2016452615
 BoxCollider2D:
