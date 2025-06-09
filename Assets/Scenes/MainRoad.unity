@@ -1864,8 +1864,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 0
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5249,8 +5249,8 @@ Transform:
   m_GameObject: {fileID: 1804444997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.783, y: -1.173, z: 0.21390373}
-  m_LocalScale: {x: 0.10695186, y: 0.10695186, z: 0.10695186}
+  m_LocalPosition: {x: 1.39, y: -1.14, z: 0.21390373}
+  m_LocalScale: {x: 0.23000002, y: 0.23000002, z: 0.23000002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 255182604}
@@ -5299,7 +5299,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.5, y: 3.48}
+  m_Size: {x: 7.12, y: 2.52}
   m_EdgeRadius: 0
 --- !u!114 &1804445000
 MonoBehaviour:
