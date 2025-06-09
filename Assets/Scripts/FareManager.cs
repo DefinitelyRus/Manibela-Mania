@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using Random = System.Random;
 
@@ -42,6 +43,10 @@ public class FareManager : MonoBehaviour {
 
 	#region Payment
 
+	public SpriteRenderer RearviewSprite;
+
+	public Color RearviewColor = Color.green;
+
 	/// <summary>
 	/// Queues the passenger as the next one to pay their fare.
 	/// <br/><br/>
@@ -56,6 +61,8 @@ public class FareManager : MonoBehaviour {
 		if (debug) Debug.Log($"[FareManager] Queued passenger for payment.");
 
 		PassengerQueue.Enqueue(passenger);
+
+		RearviewSprite.color = RearviewColor;
 	}
 
 	/// <summary>
@@ -86,6 +93,8 @@ public class FareManager : MonoBehaviour {
 			CurrentPassenger.ExpectedChange = CurrentPassenger.FareToPay - CurrentPassenger.FareOwed;
 			if (debug) Debug.Log($"[FareManager] Incomplete transaction. Expected change: P{CurrentPassenger.ExpectedChange}.");
 		}
+
+		RearviewSprite.color = Color.white;
 	}
 
 	#endregion
@@ -160,6 +169,8 @@ public class FareManager : MonoBehaviour {
 		CurrentPassenger.ReceiveChange(StagedChange, debug);
 
 		if (debug) Debug.Log($"[FareManager] Gave change to passenger: P{StagedChange} / P{CurrentPassenger.ExpectedChange}.");
+
+		CurrentPassenger = null;
 	}
 
 	#endregion
@@ -255,6 +266,24 @@ public class FareManager : MonoBehaviour {
 
 	private void Update() {
 		ScanMouseClick(true);
+
+		UpdateDisplay();
+	}
+
+	public TextMeshProUGUI DisplayText;
+
+	private void UpdateDisplay() {
+		if (CurrentPassenger == null) {
+			DisplayText.text = "";
+			return;
+		}
+
+		int payment = CurrentPassenger.FareToPay;
+		int owed = CurrentPassenger.FareOwed;
+		int change = StagedChange;
+		string text = $"Paid: {payment}\nOwed: {owed}\nChange: {change}";
+
+		DisplayText.text = text;
 	}
 
 	#endregion

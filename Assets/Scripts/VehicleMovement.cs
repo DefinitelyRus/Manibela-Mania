@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 /// <summary>
 /// Controls the movement, braking, steering, and gear shifting of a 2D vehicle. <br/>
@@ -498,7 +499,24 @@ public class VehicleMovement : MonoBehaviour {
 
 	public VehicleSFX AudioHandler;
 
+	public TextMeshProUGUI Meters;
+
 	#endregion
+
+	private void UpdateMeters() {
+		int speed = (int) (Speed / 10);
+		int rpm = (int) Mathf.Lerp(800, 4000, Mathf.Clamp01(Tachometer));
+		char gear = CurrentGear switch {
+			1 => '1',
+			2 => '2',
+			3 => '3',
+			-1 => 'R',
+			_ => 'N',
+		};
+		string text = $"Speed: {speed} kmh\nRPM: {rpm}\nGear: {gear}";
+
+		Meters.text = text;
+	}
 
 	#region Unity Callbacks
 
@@ -541,6 +559,8 @@ public class VehicleMovement : MonoBehaviour {
 		AutoShift(UseAutoShift);
 
 		UpdateTachometer();
+
+		UpdateMeters();
 	}
 
 	private void FixedUpdate() {
