@@ -170,7 +170,12 @@ public class FareManager : MonoBehaviour {
 
 		if (debug) Debug.Log($"[FareManager] Gave change to passenger: P{StagedChange} / P{CurrentPassenger.ExpectedChange}.");
 
-		CurrentPassenger = null;
+		//if (CurrentPassenger.FullyPaid) CurrentPassenger = PassengerQueue.TryDequeue(out BoardedPassenger nextPassenger) ? nextPassenger : null;
+		if (CurrentPassenger.FullyPaid) {
+			if (debug) Debug.Log("[FareManager] Passenger fully paid. Clearing current passenger.");
+			CurrentPassenger = null;
+		}
+
 	}
 
 	#endregion
