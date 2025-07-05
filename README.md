@@ -8,8 +8,8 @@ Set on a main road, the game immerses you in an urban environment filled with ev
 Drive straight ahead, managing your speed and stops to keep the passengers safe and the ride smooth. Every stop is a chance to serve with pride and carry the city’s spirit forward.
 
 
-## Who’s This For & Where Can You Play?
-- PC
+## Who’s This For?
+- PC gamers
 - Indie & pixel art game fans
 - Casual simulation players
 
@@ -53,10 +53,20 @@ Manibela Mania brings the streets to life with a playful mix of sounds:
 
 
 # Credits
-Development: Simon Marvy V. Agustin, Jayden T. De Los Reyes, DefinitelyRus
-Assets: Krishna Marie B. Reformina, Francesca Marie A. Tuazon
-Sounds: Lawrence Elijah Alexi S. Que
-Documentation: Eloiza Joy B. Lumakang
+### Development
+- Simon Marvy V. Agustin
+- Jayden T. De Los Reyes
+- DefinitelyRus
+
+### Assets
+- Krishna Marie B. Reformina
+- Francesca Marie A. Tuazon
+
+### Sounds
+- Lawrence Elijah Alexi S. Que
+
+### Documentation
+- Eloiza Joy B. Lumakang
 
 
 _Hop In and Drive! Or else._
