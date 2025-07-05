@@ -1,5 +1,5 @@
 # Manibela Mania
-More Than Just Driving—It’s Bayanihan on Wheels!
+More Than Just Driving—It’s Bayanihan on Wheels! Download the game on [itch.io](https://definitelyrus.itch.io/manibela-mania).
 
 
 ## What’s This Game About?
