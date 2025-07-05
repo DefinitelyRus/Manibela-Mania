@@ -59,7 +59,7 @@ Manibela Mania brings the streets to life with a playful mix of sounds:
 - DefinitelyRus
 
 ### Assets
-- Krishna Marie B. Reformina
+- sia
 - Francesca Marie A. Tuazon
 
 ### Sounds
